@@ -144,6 +144,30 @@ function ServiceCard({
   );
 }
 
+/** Vertical animated connector for the mobile stack */
+function FlowConnector() {
+  return (
+    <svg width="6" height="32" viewBox="0 0 6 32" aria-hidden>
+      <path
+        d="M3,0 L3,32"
+        fill="none"
+        stroke="var(--accent)"
+        strokeOpacity="0.25"
+        strokeWidth="1.25"
+      />
+      <path
+        d="M3,0 L3,32"
+        fill="none"
+        stroke="var(--accent)"
+        strokeOpacity="0.75"
+        strokeWidth="2.25"
+        strokeLinecap="round"
+        className="flow-dash"
+      />
+    </svg>
+  );
+}
+
 function Pulses() {
   return (
     <>
@@ -272,18 +296,18 @@ export function AgentDiagram() {
         ))}
       </div>
 
-      {/* Mobile: vertical stack with hairline connectors */}
+      {/* Mobile: vertical stack with animated flow connectors */}
       <div className="flex flex-col items-center gap-0 md:hidden">
         <ClientCard />
-        <span aria-hidden className="h-6 w-px bg-edge" />
+        <FlowConnector />
         <OrchestratorCard />
-        <span aria-hidden className="h-6 w-px bg-edge" />
+        <FlowConnector />
         <div className="flex w-full flex-col gap-2">
           {AGENTS.map((agent) => (
             <AgentCard key={agent.title} title={agent.title} sub={agent.sub} />
           ))}
         </div>
-        <span aria-hidden className="h-6 w-px bg-edge" />
+        <FlowConnector />
         <div className="grid w-full grid-cols-2 gap-2">
           {SERVICES.map((service) => (
             <div key={service.label} className="last:col-span-2">
