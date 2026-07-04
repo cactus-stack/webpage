@@ -5,10 +5,10 @@ export function Architecture() {
   return (
     <section className="mx-auto max-w-[1200px] px-6 py-24 lg:py-32">
       <Reveal>
-        <h2 className="text-3xl tracking-tight md:text-4xl">
+        <h2 className="text-3xl font-medium tracking-tight md:text-4xl">
           Agent systems, end to end
         </h2>
-        <p className="mt-4 max-w-[65ch] leading-relaxed text-muted">
+        <p className="mt-4 max-w-[65ch] leading-relaxed text-pretty text-muted">
           How I wire LLM agents into production: one orchestrator, typed agent
           tools, and the backend services behind them.
         </p>

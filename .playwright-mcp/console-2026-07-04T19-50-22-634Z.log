@@ -1,2 +1,1130 @@
 [     147ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
 [     168ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  458362ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  458494ms] [ERROR] ./app/globals.css:1270:26
+Parsing CSS source code failed
+  1268 |   }
+  1269 |   .max-\[hover\:none\]\:hidden {
+> 1270 |     @media (width < hover:none) {
+       |                          ^
+  1271 |       display: none;
+  1272 |     }
+  1273 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1270:26
+  1268 |   }
+  1269 |   .max-\[hover\:none\]\:hidden {
+> 1270 |     @media (width < hover:none) {
+       |                          ^
+  1271 |       display: none;
+  1272 |     }
+  1273 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[  458628ms] [ERROR] ./app/globals.css:1270:26
+Parsing CSS source code failed
+  1268 |   }
+  1269 |   .max-\[hover\:none\]\:hidden {
+> 1270 |     @media (width < hover:none) {
+       |                          ^
+  1271 |       display: none;
+  1272 |     }
+  1273 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1270:26
+  1268 |   }
+  1269 |   .max-\[hover\:none\]\:hidden {
+> 1270 |     @media (width < hover:none) {
+       |                          ^
+  1271 |       display: none;
+  1272 |     }
+  1273 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[  458645ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  472201ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  472343ms] [ERROR] ./app/globals.css:1281:26
+Parsing CSS source code failed
+  1279 |   }
+  1280 |   .max-\[hover\:none\]\:hidden {
+> 1281 |     @media (width < hover:none) {
+       |                          ^
+  1282 |       display: none;
+  1283 |     }
+  1284 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1281:26
+  1279 |   }
+  1280 |   .max-\[hover\:none\]\:hidden {
+> 1281 |     @media (width < hover:none) {
+       |                          ^
+  1282 |       display: none;
+  1283 |     }
+  1284 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[  472377ms] [ERROR] ./app/globals.css:1281:26
+Parsing CSS source code failed
+  1279 |   }
+  1280 |   .max-\[hover\:none\]\:hidden {
+> 1281 |     @media (width < hover:none) {
+       |                          ^
+  1282 |       display: none;
+  1283 |     }
+  1284 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1281:26
+  1279 |   }
+  1280 |   .max-\[hover\:none\]\:hidden {
+> 1281 |     @media (width < hover:none) {
+       |                          ^
+  1282 |       display: none;
+  1283 |     }
+  1284 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[  472478ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  472820ms] [ERROR] ./app/globals.css:1281:26
+Parsing CSS source code failed
+  1279 |   }
+  1280 |   .max-\[hover\:none\]\:hidden {
+> 1281 |     @media (width < hover:none) {
+       |                          ^
+  1282 |       display: none;
+  1283 |     }
+  1284 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1281:26
+  1279 |   }
+  1280 |   .max-\[hover\:none\]\:hidden {
+> 1281 |     @media (width < hover:none) {
+       |                          ^
+  1282 |       display: none;
+  1283 |     }
+  1284 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[  472922ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  473137ms] [ERROR] ./app/globals.css:1281:26
+Parsing CSS source code failed
+  1279 |   }
+  1280 |   .max-\[hover\:none\]\:hidden {
+> 1281 |     @media (width < hover:none) {
+       |                          ^
+  1282 |       display: none;
+  1283 |     }
+  1284 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1281:26
+  1279 |   }
+  1280 |   .max-\[hover\:none\]\:hidden {
+> 1281 |     @media (width < hover:none) {
+       |                          ^
+  1282 |       display: none;
+  1283 |     }
+  1284 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[  473138ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3210/?_rsc=q3mOO9BClNZHexY7:0
+[  473160ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3210/?_rsc=q3mOO9BClNZHexY7:0
+[  473172ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3210/?_rsc=q3mOO9BClNZHexY7:0
+[  473184ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3210/?_rsc=q3mOO9BClNZHexY7:0
+[  473224ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3210/:0
+[  473308ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_react-dom_0kla17-._.js:15305
+[  473338ms] Error: ./app/globals.css:1281:26
+Parsing CSS source code failed
+  1279 |   }
+  1280 |   .max-\[hover\:none\]\:hidden {
+> 1281 |     @media (width < hover:none) {
+       |                          ^
+  1282 |       display: none;
+  1283 |     }
+  1284 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1281:26
+  1279 |   }
+  1280 |   .max-\[hover\:none\]\:hidden {
+> 1281 |     @media (width < hover:none) {
+       |                          ^
+  1282 |       display: none;
+  1283 |     }
+  1284 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+
+
+    at <unknown> (Error: ./app/globals.css:1281:26)
+    at <unknown> (./app/globals.css:1281:26)
+    at Object.getCompilationErrors (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/base-server.js:1753:26)
+[  473338ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  473362ms] [ERROR] ./app/globals.css:1281:26
+Parsing CSS source code failed
+  1279 |   }
+  1280 |   .max-\[hover\:none\]\:hidden {
+> 1281 |     @media (width < hover:none) {
+       |                          ^
+  1282 |       display: none;
+  1283 |     }
+  1284 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1281:26
+  1279 |   }
+  1280 |   .max-\[hover\:none\]\:hidden {
+> 1281 |     @media (width < hover:none) {
+       |                          ^
+  1282 |       display: none;
+  1283 |     }
+  1284 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  473417ms] [ERROR] ./app/globals.css:1281:26
+Parsing CSS source code failed
+  1279 |   }
+  1280 |   .max-\[hover\:none\]\:hidden {
+> 1281 |     @media (width < hover:none) {
+       |                          ^
+  1282 |       display: none;
+  1283 |     }
+  1284 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1281:26
+  1279 |   }
+  1280 |   .max-\[hover\:none\]\:hidden {
+> 1281 |     @media (width < hover:none) {
+       |                          ^
+  1282 |       display: none;
+  1283 |     }
+  1284 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  473453ms] [ERROR] ./app/globals.css:1281:26
+Parsing CSS source code failed
+  1279 |   }
+  1280 |   .max-\[hover\:none\]\:hidden {
+> 1281 |     @media (width < hover:none) {
+       |                          ^
+  1282 |       display: none;
+  1283 |     }
+  1284 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1281:26
+  1279 |   }
+  1280 |   .max-\[hover\:none\]\:hidden {
+> 1281 |     @media (width < hover:none) {
+       |                          ^
+  1282 |       display: none;
+  1283 |     }
+  1284 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  473520ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  485568ms] [ERROR] ./app/globals.css:1293:26
+Parsing CSS source code failed
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1293:26
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  485597ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  490269ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  490357ms] [ERROR] ./app/globals.css:1293:26
+Parsing CSS source code failed
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1293:26
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  490392ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3210/:0
+[  490427ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_react-dom_0kla17-._.js:15305
+[  490437ms] Error: ./app/globals.css:1293:26
+Parsing CSS source code failed
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1293:26
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+
+
+    at <unknown> (Error: ./app/globals.css:1293:26)
+    at <unknown> (./app/globals.css:1293:26)
+    at Object.getCompilationErrors (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/base-server.js:1753:26)
+[  490436ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  490445ms] [ERROR] ./app/globals.css:1293:26
+Parsing CSS source code failed
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1293:26
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  490478ms] [ERROR] ./app/globals.css:1293:26
+Parsing CSS source code failed
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1293:26
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  490544ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  505593ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  506305ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3210/:0
+[  506343ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_react-dom_0kla17-._.js:15305
+[  506351ms] Error: ./app/globals.css:1293:26
+Parsing CSS source code failed
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1293:26
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+
+
+    at <unknown> (Error: ./app/globals.css:1293:26)
+    at <unknown> (./app/globals.css:1293:26)
+    at Object.getCompilationErrors (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/base-server.js:1753:26)
+[  506351ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  506353ms] [ERROR] ./app/globals.css:1293:26
+Parsing CSS source code failed
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1293:26
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  506385ms] [ERROR] ./app/globals.css:1293:26
+Parsing CSS source code failed
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1293:26
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  506454ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  510447ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  510475ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3210/:0
+[  510514ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_react-dom_0kla17-._.js:15305
+[  510519ms] Error: ./app/globals.css:1293:26
+Parsing CSS source code failed
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1293:26
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+
+
+    at <unknown> (Error: ./app/globals.css:1293:26)
+    at <unknown> (./app/globals.css:1293:26)
+    at Object.getCompilationErrors (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/base-server.js:1753:26)
+[  510519ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  510520ms] [ERROR] ./app/globals.css:1293:26
+Parsing CSS source code failed
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1293:26
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  510552ms] [ERROR] ./app/globals.css:1293:26
+Parsing CSS source code failed
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1293:26
+  1291 |   }
+  1292 |   .max-\[hover\:none\]\:hidden {
+> 1293 |     @media (width < hover:none) {
+       |                          ^
+  1294 |       display: none;
+  1295 |     }
+  1296 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  510622ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  514878ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  515141ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3210/:0
+[  515160ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_react-dom_0kla17-._.js:15305
+[  515165ms] Error: ./app/globals.css:1308:26
+Parsing CSS source code failed
+  1306 |   }
+  1307 |   .max-\[hover\:none\]\:hidden {
+> 1308 |     @media (width < hover:none) {
+       |                          ^
+  1309 |       display: none;
+  1310 |     }
+  1311 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1308:26
+  1306 |   }
+  1307 |   .max-\[hover\:none\]\:hidden {
+> 1308 |     @media (width < hover:none) {
+       |                          ^
+  1309 |       display: none;
+  1310 |     }
+  1311 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+
+
+    at <unknown> (Error: ./app/globals.css:1308:26)
+    at <unknown> (./app/globals.css:1308:26)
+    at Object.getCompilationErrors (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/base-server.js:1753:26)
+[  515165ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  515169ms] [ERROR] ./app/globals.css:1308:26
+Parsing CSS source code failed
+  1306 |   }
+  1307 |   .max-\[hover\:none\]\:hidden {
+> 1308 |     @media (width < hover:none) {
+       |                          ^
+  1309 |       display: none;
+  1310 |     }
+  1311 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1308:26
+  1306 |   }
+  1307 |   .max-\[hover\:none\]\:hidden {
+> 1308 |     @media (width < hover:none) {
+       |                          ^
+  1309 |       display: none;
+  1310 |     }
+  1311 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  515200ms] [ERROR] ./app/globals.css:1308:26
+Parsing CSS source code failed
+  1306 |   }
+  1307 |   .max-\[hover\:none\]\:hidden {
+> 1308 |     @media (width < hover:none) {
+       |                          ^
+  1309 |       display: none;
+  1310 |     }
+  1311 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1308:26
+  1306 |   }
+  1307 |   .max-\[hover\:none\]\:hidden {
+> 1308 |     @media (width < hover:none) {
+       |                          ^
+  1309 |       display: none;
+  1310 |     }
+  1311 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  515269ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  532973ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  533015ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3210/:0
+[  533058ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_react-dom_0kla17-._.js:15305
+[  533090ms] Error: ./app/globals.css:1311:26
+Parsing CSS source code failed
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1311:26
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+
+
+    at <unknown> (Error: ./app/globals.css:1311:26)
+    at <unknown> (./app/globals.css:1311:26)
+    at Object.getCompilationErrors (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/base-server.js:1753:26)
+[  533099ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  533103ms] [ERROR] ./app/globals.css:1311:26
+Parsing CSS source code failed
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1311:26
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  533133ms] [ERROR] ./app/globals.css:1311:26
+Parsing CSS source code failed
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1311:26
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  533203ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  564699ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  564737ms] [ERROR] ./app/globals.css:1311:26
+Parsing CSS source code failed
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1311:26
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  564758ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3210/:0
+[  564809ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_react-dom_0kla17-._.js:15305
+[  564828ms] Error: ./app/globals.css:1311:26
+Parsing CSS source code failed
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1311:26
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+
+
+    at <unknown> (Error: ./app/globals.css:1311:26)
+    at <unknown> (./app/globals.css:1311:26)
+    at Object.getCompilationErrors (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/base-server.js:1753:26)
+[  564831ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  564833ms] [ERROR] ./app/globals.css:1311:26
+Parsing CSS source code failed
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1311:26
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  564865ms] [ERROR] ./app/globals.css:1311:26
+Parsing CSS source code failed
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1311:26
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  564934ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  574077ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  574191ms] [ERROR] ./app/globals.css:1311:26
+Parsing CSS source code failed
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1311:26
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  574292ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  574351ms] [ERROR] ./app/globals.css:1311:26
+Parsing CSS source code failed
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1311:26
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  610299ms] [ERROR] WebSocket connection to 'ws://localhost:3210/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_client_16lnmlo._.js:2343
+[  611644ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  611851ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3210/:0
+[  611871ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_react-dom_0kla17-._.js:15305
+[  611877ms] Error: ./app/globals.css:1311:26
+Parsing CSS source code failed
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1311:26
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+
+
+    at <unknown> (Error: ./app/globals.css:1311:26)
+    at <unknown> (./app/globals.css:1311:26)
+    at Object.getCompilationErrors (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/bucio/Dev/personal-page/node_modules/next/dist/server/base-server.js:1753:26)
+[  611877ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  611925ms] [ERROR] ./app/globals.css:1311:26
+Parsing CSS source code failed
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1311:26
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  611961ms] [ERROR] ./app/globals.css:1311:26
+Parsing CSS source code failed
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1311:26
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  612027ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  612662ms] [ERROR] ./app/globals.css:1311:26
+Parsing CSS source code failed
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1311:26
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  616340ms] [ERROR] ./app/globals.css:1311:26
+Parsing CSS source code failed
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Unexpected token Colon
+
+Generated code of PostCSS transform of file content of app/globals.css:
+./app/globals.css:1311:26
+  1309 |   }
+  1310 |   .max-\[hover\:none\]\:hidden {
+> 1311 |     @media (width < hover:none) {
+       |                          ^
+  1312 |       display: none;
+  1313 |     }
+  1314 |   }
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  616374ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  657528ms] [ERROR] WebSocket connection to 'ws://localhost:3210/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_client_16lnmlo._.js:2343
+[  658530ms] [ERROR] WebSocket connection to 'ws://localhost:3210/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_client_16lnmlo._.js:2343
+[  659533ms] [ERROR] WebSocket connection to 'ws://localhost:3210/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_client_16lnmlo._.js:2343
+[  660540ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  663941ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  663980ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  667350ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  667398ms] [LOG] [Fast Refresh] done in 149ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  667571ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  667616ms] [LOG] [Fast Refresh] done in 145ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  707780ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  707802ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  711803ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3210/nonexistent:0
+[  711820ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  711825ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477

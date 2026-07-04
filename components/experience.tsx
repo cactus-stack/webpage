@@ -57,8 +57,8 @@ export function Experience() {
     >
       <div className="lg:sticky lg:top-24 lg:self-start">
         <Reveal>
-          <h2 className="text-3xl tracking-tight md:text-4xl">Experience</h2>
-          <p className="mt-4 max-w-[40ch] leading-relaxed text-muted">
+          <h2 className="text-3xl font-medium tracking-tight md:text-4xl">Experience</h2>
+          <p className="mt-4 max-w-[40ch] leading-relaxed text-pretty text-muted">
             Four years across banking, fintech, and industrial automation.
           </p>
           <a

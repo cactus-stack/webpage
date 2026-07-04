@@ -42,7 +42,7 @@ export function Contact() {
           <h2 className="max-w-[18ch] text-4xl leading-none tracking-tighter text-balance md:text-5xl lg:text-6xl">
             Looking for a backend or AI engineer?
           </h2>
-          <p className="mt-6 max-w-[48ch] text-lg leading-relaxed text-muted">
+          <p className="mt-6 max-w-[48ch] text-lg leading-relaxed text-pretty text-muted">
             Open to remote roles with U.S. teams, working from Mexico City on
             U.S. hours.
           </p>

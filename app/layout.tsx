@@ -13,6 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? new URL(`https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`)
+    : new URL("http://localhost:3000"),
   title: "Oscar Bucio | Backend / AI Engineer",
   description:
     "Backend / AI engineer: Python services, AWS serverless, and LLM agent tooling. U.S. citizen based in Mexico City, working remotely with U.S. teams.",
@@ -21,6 +24,9 @@ export const metadata: Metadata = {
     description:
       "Python backend systems, AWS serverless infrastructure, and LLM agent tooling.",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 

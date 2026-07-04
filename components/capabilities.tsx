@@ -8,6 +8,7 @@ import {
   Stack as StackIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "@/components/reveal";
+import { Spotlight } from "@/components/spotlight";
 
 const EASE = "ease-[cubic-bezier(0.32,0.72,0,1)]";
 
@@ -20,15 +21,15 @@ function Cell({
   inner?: string;
 }) {
   return (
-    <div
-      className={`h-full rounded-[1.75rem] bg-foreground/[0.04] p-1.5 ring-1 ring-foreground/10 transition-all duration-500 ${EASE} hover:-translate-y-1 hover:ring-accent/40`}
+    <Spotlight
+      className={`h-full rounded-[1.75rem] bg-foreground/[0.04] p-1.5 ring-1 ring-foreground/10 transition-all duration-500 ${EASE} hover:-translate-y-1 hover:ring-accent/40 hover:shadow-[0_24px_60px_-28px_color-mix(in_srgb,var(--accent)_45%,transparent)]`}
     >
       <div
         className={`h-full overflow-hidden rounded-[calc(1.75rem-0.375rem)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] ${inner}`}
       >
         {children}
       </div>
-    </div>
+    </Spotlight>
   );
 }
 
@@ -37,8 +38,8 @@ export function Capabilities() {
     <section id="capabilities" className="border-y border-edge bg-surface">
       <div className="mx-auto max-w-[1200px] px-6 py-24 lg:py-36">
         <Reveal>
-          <h2 className="text-3xl tracking-tight md:text-4xl">What I do</h2>
-          <p className="mt-4 max-w-[65ch] leading-relaxed text-muted">
+          <h2 className="text-3xl font-medium tracking-tight md:text-4xl">What I do</h2>
+          <p className="mt-4 max-w-[65ch] leading-relaxed text-pretty text-muted">
             Five areas, one goal: software that ships and holds up in
             production.
           </p>
