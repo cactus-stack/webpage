@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+/* Semantic tokens: light theme values, overridden for dark below */
+:root {
+  --background: #fafafa;
+  --foreground: #16181d;
+  --muted: #4d5561;
+  --surface: #f0f2f5;
+  --edge: #e2e5ea;
+  --accent: #1d4ed8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #070b14;
+    --foreground: #e6e9f0;
+    --muted: #98a2b6;
+    --surface: #0c1220;
+    --edge: #1c2536;
+    --accent: #4d8dff;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-surface: var(--surface);
+  --color-edge: var(--edge);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--background);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Anchored sections clear the fixed nav */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Stack marquee: duplicated track slides by half its width for a seamless loop */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 45s linear infinite;
+}
+
+.marquee:hover .marquee-track,
+.marquee[data-paused="true"] .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: auto;
+  }
+  /* The visible row must wrap too; it is nowrap + shrink-0 for the animation */
+  .marquee-track > ul {
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    row-gap: 1.5rem;
+  }
+  .marquee-dup,
+  .marquee-fade,
+  .marquee-toggle {
+    display: none;
+  }
+}

@@ -1,0 +1,100 @@
+import Image from "next/image";
+import {
+  CloudArrowUp,
+  FlowArrow,
+  PlugsConnected,
+  Robot,
+  Stack as StackIcon,
+} from "@phosphor-icons/react/dist/ssr";
+import { Reveal } from "@/components/reveal";
+
+export function Capabilities() {
+  return (
+    <section id="capabilities" className="border-y border-edge bg-surface">
+      <div className="mx-auto max-w-[1200px] px-6 py-24 lg:py-32">
+        <Reveal>
+          <h2 className="text-3xl tracking-tight md:text-4xl">What I do</h2>
+          <p className="mt-4 max-w-[65ch] leading-relaxed text-muted">
+            Five areas, one goal: software that ships and holds up in
+            production.
+          </p>
+        </Reveal>
+        <div className="mt-12 grid gap-4 md:grid-cols-6">
+          <Reveal className="md:col-span-4">
+            <div className="h-full rounded-2xl border border-edge bg-gradient-to-br from-accent/15 via-transparent to-transparent p-7 transition duration-300 hover:-translate-y-1 hover:border-accent/40">
+              <StackIcon size={28} className="text-accent" />
+              <h3 className="mt-5 text-xl font-medium tracking-tight">
+                Backend platforms
+              </h3>
+              <p className="mt-3 max-w-[48ch] leading-relaxed text-muted">
+                Python services with typed data models, parsers, and DTOs.
+                Clean separation between adapters, orchestration logic, and
+                backend clients.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal className="md:col-span-2" delay={0.05}>
+            <div className="h-full rounded-2xl border border-edge bg-background p-7 transition duration-300 hover:-translate-y-1 hover:border-accent/40">
+              <CloudArrowUp size={28} className="text-accent" />
+              <h3 className="mt-5 text-xl font-medium tracking-tight">
+                AWS serverless
+              </h3>
+              <p className="mt-3 leading-relaxed text-muted">
+                Lambda, Step Functions, SQS, EventBridge, S3. Event-driven
+                workflows that scale on their own.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal className="md:col-span-3" delay={0.1}>
+            <div className="relative h-full min-h-64 overflow-hidden rounded-2xl border border-edge transition duration-300 hover:-translate-y-1 hover:border-accent/40">
+              <Image
+                src="/images/fog-harbor.jpg"
+                alt=""
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/85 via-zinc-950/65 to-zinc-950/45" />
+              <div className="relative flex h-full flex-col justify-end p-7">
+                <Robot size={28} className="text-blue-400" />
+                <h3 className="mt-5 text-xl font-medium tracking-tight text-zinc-50">
+                  LLM agents &amp; RAG
+                </h3>
+                <p className="mt-3 leading-relaxed text-zinc-300">
+                  Agent tools, retrieval pipelines, and validation flows with
+                  the OpenAI Agents SDK, Bedrock, and LangChain.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal className="md:col-span-3" delay={0.15}>
+            <div className="h-full rounded-2xl border border-edge bg-background p-7 transition duration-300 hover:-translate-y-1 hover:border-accent/40">
+              <PlugsConnected size={28} className="text-accent" />
+              <h3 className="mt-5 text-xl font-medium tracking-tight">
+                API integrations
+              </h3>
+              <p className="mt-3 leading-relaxed text-muted">
+                REST APIs, auth flows, and webhooks that keep AI capabilities
+                decoupled from underlying service contracts.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal className="md:col-span-6" delay={0.2}>
+            <div className="flex h-full flex-col gap-4 rounded-2xl border border-edge bg-background p-7 transition duration-300 hover:-translate-y-1 hover:border-accent/40 sm:flex-row sm:items-center sm:gap-8">
+              <FlowArrow size={28} className="shrink-0 text-accent" />
+              <div>
+                <h3 className="text-xl font-medium tracking-tight">
+                  Data &amp; automation
+                </h3>
+                <p className="mt-3 max-w-[72ch] leading-relaxed text-muted">
+                  Real-time data pipelines, automated testing, and process
+                  automation, from UiPath bots to serverless event streams.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
