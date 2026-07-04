@@ -1,0 +1,179 @@
+[   29453ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[   29490ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  383807ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  383876ms] [LOG] [Fast Refresh] done in 142ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  387080ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  387243ms] [ERROR] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[  387256ms] [LOG] [Fast Refresh] done in 219ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  399441ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  399510ms] [LOG] [Fast Refresh] done in 75ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  401668ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  401976ms] [LOG] [Fast Refresh] done in 303ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  402369ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  402378ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  402473ms] [WARNING] Image with src "/images/fog-harbor.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  450062ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  450090ms] [LOG] [Fast Refresh] done in 69ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  459049ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  459082ms] [LOG] [Fast Refresh] done in 25ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  469497ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  469548ms] [LOG] [Fast Refresh] done in 76ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  470889ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  471067ms] [LOG] [Fast Refresh] done in 105ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  471257ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  471283ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  471321ms] [WARNING] Image with src "/images/fog-harbor.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  474425ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  474546ms] [LOG] [Fast Refresh] done in 85ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  474643ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3210/:0
+[  474680ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  474694ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  474703ms] [ERROR] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[  474760ms] ReferenceError: HeroCanvas is not defined
+    at Hero (http://localhost:3210/_next/static/chunks/components_1psfuuu._.js:176:216)
+    at Object.react_stack_bottom_frame (http://localhost:3210/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:15037:24)
+    at renderWithHooks (http://localhost:3210/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:4620:24)
+    at updateFunctionComponent (http://localhost:3210/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6081:21)
+    at beginWork (http://localhost:3210/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6665:639)
+    at runWithFiberInDEV (http://localhost:3210/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:74)
+    at performUnitOfWork (http://localhost:3210/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9555:97)
+    at workLoopSync (http://localhost:3210/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9449:40)
+    at renderRootSync (http://localhost:3210/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9433:13)
+    at performWorkOnRoot (http://localhost:3210/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9098:47)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3210/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3210/_next/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:2647:64)
+[  474764ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3210/favicon.ico:0
+[  475040ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  475040ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  475089ms] [LOG] [Fast Refresh] done in 15ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  475111ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  475141ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  483447ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  483486ms] [LOG] [Fast Refresh] done in 30ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  485356ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  485391ms] [LOG] [Fast Refresh] done in 12ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  509115ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  509127ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  555893ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  555920ms] [LOG] [Fast Refresh] done in 42ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  572389ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  572409ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  632308ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  632417ms] [LOG] [Fast Refresh] done in 185ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  634998ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  635028ms] [LOG] [Fast Refresh] done in 16ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  636520ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  636548ms] [LOG] [Fast Refresh] done in 18ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  762310ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  763088ms] [LOG] [Fast Refresh] done in 838ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  765528ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  765691ms] [LOG] [Fast Refresh] done in 234ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  767970ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  768008ms] [LOG] [Fast Refresh] done in 34ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  779122ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  779152ms] [LOG] [Fast Refresh] done in 31ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  786318ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  786355ms] [LOG] [Fast Refresh] done in 49ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  812712ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  812967ms] [LOG] [Fast Refresh] done in 194ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  813199ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  813232ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  821752ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  821781ms] [LOG] [Fast Refresh] done in 25ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  843420ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  843459ms] [LOG] [Fast Refresh] done in 54ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  852949ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  852978ms] [LOG] [Fast Refresh] done in 26ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  855075ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  855105ms] [LOG] [Fast Refresh] done in 15ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  865642ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  865671ms] [LOG] [Fast Refresh] done in 24ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  868077ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  868106ms] [LOG] [Fast Refresh] done in 13ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  870341ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  870370ms] [LOG] [Fast Refresh] done in 13ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  873329ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  873358ms] [LOG] [Fast Refresh] done in 14ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  883799ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  883828ms] [LOG] [Fast Refresh] done in 16ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  885712ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  885740ms] [LOG] [Fast Refresh] done in 28ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  894318ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  894357ms] [LOG] [Fast Refresh] done in 48ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  898079ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  898120ms] [LOG] [Fast Refresh] done in 27ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  900451ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  900521ms] [LOG] [Fast Refresh] done in 54ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  902308ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  902348ms] [LOG] [Fast Refresh] done in 43ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  934976ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  935000ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  979998ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  980026ms] [LOG] [Fast Refresh] done in 44ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  981273ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  981303ms] [LOG] [Fast Refresh] done in 14ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  996279ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  996294ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1031268ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1031295ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2171625ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2171844ms] [LOG] [Fast Refresh] done in 297ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2184872ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2184904ms] [LOG] [Fast Refresh] done in 112ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2210058ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2210080ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2254430ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2254453ms] [LOG] [Fast Refresh] done in 50ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2256220ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2256245ms] [LOG] [Fast Refresh] done in 18ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2258204ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2258234ms] [LOG] [Fast Refresh] done in 19ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2259599ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2259625ms] [LOG] [Fast Refresh] done in 19ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2272195ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2272228ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2527125ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2527150ms] [LOG] [Fast Refresh] done in 68ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2537393ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2537743ms] [WARNING] [HMR] Invalid message: {"isTrusted":true}
+TypeError: Cannot convert undefined or null to object
+    at Object.keys (<anonymous>)
+    at extractModulesFromTurbopackMessage (http://localhost:3210/_next/static/chunks/node_modules_next_dist_client_0r5nbpw._.js:13754:39)
+    at TurbopackHmr.onTurbopackMessage (http://localhost:3210/_next/static/chunks/node_modules_next_dist_client_0r5nbpw._.js:13701:32)
+    at processMessage (http://localhost:3210/_next/static/chunks/node_modules_next_dist_client_0r5nbpw._.js:14059:30)
+    at WebSocket.handleMessage (http://localhost:3210/_next/static/chunks/node_modules_next_dist_client_0r5nbpw._.js:13458:52) @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2537744ms] [LOG] [Fast Refresh] done in 452ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2537992ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2538011ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2545033ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2545068ms] [LOG] [Fast Refresh] done in 66ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2577103ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2577118ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2661968ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2662027ms] [LOG] [Fast Refresh] done in 82ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2842518ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2842553ms] [LOG] [Fast Refresh] done in 87ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2846667ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2846711ms] [LOG] [Fast Refresh] done in 15ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2848567ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2848608ms] [LOG] [Fast Refresh] done in 15ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2850568ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2850608ms] [LOG] [Fast Refresh] done in 14ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2864691ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2864708ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 3244159ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 3244275ms] [LOG] [Fast Refresh] done in 104ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 3273314ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 3273337ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 3322600ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 3322675ms] [LOG] [Fast Refresh] done in 45ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 3334898ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 3334918ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 3695612ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 3695641ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 3707396ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 3707556ms] [LOG] [Fast Refresh] done in 209ms @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 3721521ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 3721538ms] [LOG] [HMR] connected @ http://localhost:3210/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477

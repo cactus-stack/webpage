@@ -36,10 +36,14 @@ export function Reveal({ children, delay = 0, className }: RevealProps) {
       ref={ref}
       className={className}
       initial={false}
-      animate={armed ? { opacity: 0, y: 28 } : { opacity: 1, y: 0 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      animate={
+        armed
+          ? { opacity: 0, y: 32, filter: "blur(10px)" }
+          : { opacity: 1, y: 0, filter: "blur(0px)" }
+      }
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.85, delay, ease: [0.32, 0.72, 0, 1] }}
     >
       {children}
     </motion.div>

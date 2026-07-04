@@ -33,3 +33,4 @@ Push the repository to GitHub and import it in Vercel; no extra configuration is
 - `components/` - one file per section: `nav`, `hero`, `facts`, `experience`, `capabilities`, `stack`, `contact`
 - `components/logos.tsx` - brand marks inlined from Simple Icons / Devicon, themed via `currentColor`
 - `components/reveal.tsx` - scroll-reveal wrapper (Motion), honors `prefers-reduced-motion`
+- `components/agent-diagram.tsx` - animated 2D agent-architecture diagram (SVG connectors + SMIL pulses over glass cards); server-rendered, theme-aware, pulses hidden under `prefers-reduced-motion`

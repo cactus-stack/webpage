@@ -4,6 +4,7 @@ import {
   GithubLogo,
   LinkedinLogo,
 } from "@phosphor-icons/react/dist/ssr";
+import { CtaLink } from "@/components/cta";
 import { Reveal } from "@/components/reveal";
 
 const channels = [
@@ -29,8 +30,14 @@ const channels = [
 
 export function Contact() {
   return (
-    <section id="contact" className="border-t border-edge">
-      <div className="mx-auto grid max-w-[1200px] gap-14 px-6 py-24 lg:grid-cols-12 lg:py-32">
+    <section id="contact" className="relative overflow-hidden border-t border-edge">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10"
+      >
+        <div className="absolute -bottom-48 left-[10%] h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(closest-side,color-mix(in_srgb,var(--accent)_11%,transparent),transparent)]" />
+      </div>
+      <div className="mx-auto grid max-w-[1200px] gap-14 px-6 py-24 lg:grid-cols-12 lg:py-36">
         <Reveal className="lg:col-span-7">
           <h2 className="max-w-[18ch] text-4xl leading-none tracking-tighter text-balance md:text-5xl lg:text-6xl">
             Looking for a backend or AI engineer?
@@ -39,12 +46,9 @@ export function Contact() {
             Open to remote roles with U.S. teams, working from Mexico City on
             U.S. hours.
           </p>
-          <a
-            href="mailto:oscarbucio2001@gmail.com"
-            className="mt-10 inline-flex h-12 items-center rounded-full bg-foreground px-7 font-medium text-background transition duration-300 hover:-translate-y-0.5 hover:opacity-90 active:translate-y-px"
-          >
-            Email me
-          </a>
+          <div className="mt-10">
+            <CtaLink href="mailto:oscarbucio2001@gmail.com">Email me</CtaLink>
+          </div>
         </Reveal>
         <Reveal className="lg:col-span-4 lg:col-start-9" delay={0.1}>
           <ul className="divide-y divide-edge">
@@ -58,7 +62,7 @@ export function Contact() {
                       ? undefined
                       : "noopener noreferrer"
                   }
-                  className="group flex items-center justify-between gap-4 py-5"
+                  className="group -mx-4 flex items-center justify-between gap-4 rounded-2xl px-4 py-5 transition-colors duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-foreground/[0.04]"
                 >
                   <span className="flex items-center gap-3">
                     <Icon size={20} className="text-muted" />

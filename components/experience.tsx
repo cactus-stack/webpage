@@ -74,8 +74,12 @@ export function Experience() {
       </div>
       <div className="divide-y divide-edge">
         {jobs.map((job, i) => (
-          <Reveal key={job.company} delay={i * 0.05}>
-            <article className="group py-10 first:pt-0 last:pb-0">
+          <Reveal
+            key={job.company}
+            delay={i * 0.05}
+            className="py-12 first:pt-0 last:pb-0"
+          >
+            <article className="group">
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                 <h3 className="text-xl font-medium tracking-tight transition-colors duration-300 group-hover:text-accent">
                   {job.company}
@@ -87,8 +91,8 @@ export function Experience() {
               <p className="mt-1 text-sm text-muted">
                 {job.role}, {job.location}
               </p>
-              <p className="mt-4 leading-relaxed text-muted">{job.summary}</p>
-              <ul className="mt-5 flex flex-wrap gap-2">
+              <p className="mt-5 leading-relaxed text-muted">{job.summary}</p>
+              <ul className="mt-6 flex flex-wrap gap-2">
                 {job.stack.map((tech) => (
                   <li
                     key={tech}
