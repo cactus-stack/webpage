@@ -8,14 +8,22 @@ const links = [
   { href: "#contact", label: "Contact" },
 ];
 
-/** Nav anchors with a scroll-spy underline on the section in view */
-export function NavLinks() {
+type NavLinksProps = {
+  variant?: "desktop" | "mobile";
+  onNavigate?: () => void;
+};
+
+/** Nav anchors with a scroll-spy marker on the section in view. */
+export function NavLinks({
+  variant = "desktop",
+  onNavigate,
+}: NavLinksProps) {
   const [active, setActive] = useState<string | null>(null);
 
   useEffect(() => {
     const sections = links
       .map((link) => document.getElementById(link.href.slice(1)))
-      .filter((el): el is HTMLElement => el !== null);
+      .filter((section): section is HTMLElement => section !== null);
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -23,27 +31,45 @@ export function NavLinks() {
           if (entry.isIntersecting) setActive(`#${entry.target.id}`);
         }
       },
-      // A narrow band around the viewport center decides the active section
-      { rootMargin: "-40% 0px -55% 0px" },
+      { rootMargin: "-28% 0px -62% 0px" },
     );
+
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
   }, []);
 
+  const isMobile = variant === "mobile";
+
   return (
-    <ul className="hidden items-center gap-6 text-sm text-muted sm:flex">
+    <ul
+      className={
+        isMobile
+          ? "flex w-full flex-col"
+          : "flex min-w-0 items-center gap-0.5 lg:gap-2"
+      }
+    >
       {links.map((link) => {
         const isActive = active === link.href;
+
         return (
-          <li key={link.href}>
+          <li key={link.href} className={isMobile ? "w-full" : undefined}>
             <a
               href={link.href}
-              aria-current={isActive ? "true" : undefined}
-              className={`relative transition-colors duration-300 after:absolute after:-bottom-1 after:left-0 after:h-px after:bg-accent after:transition-[width] after:duration-500 after:ease-[cubic-bezier(0.32,0.72,0,1)] hover:text-foreground hover:after:w-full ${
-                isActive ? "text-foreground after:w-full" : "after:w-0"
-              }`}
+              aria-current={isActive ? "location" : undefined}
+              onClick={onNavigate}
+              className={
+                isMobile
+                  ? `group flex min-h-14 w-full items-center justify-between border-b border-edge py-2 text-base font-medium tracking-[-0.02em] transition-colors duration-200 hover:text-accent ${
+                      isActive ? "text-accent" : "text-foreground"
+                    }`
+                  : `group relative inline-flex min-h-11 items-center gap-2 px-2.5 text-[13px] font-medium tracking-[-0.01em] transition-colors duration-200 after:absolute after:inset-x-2.5 after:bottom-0 after:h-px after:origin-left after:bg-accent after:transition-transform after:duration-300 lg:px-3 lg:after:inset-x-3 ${
+                      isActive
+                        ? "text-foreground after:scale-x-100"
+                        : "text-muted after:scale-x-0 hover:text-foreground hover:after:scale-x-100"
+                    }`
+              }
             >
-              {link.label}
+              <span>{link.label}</span>
             </a>
           </li>
         );

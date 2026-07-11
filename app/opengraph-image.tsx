@@ -1,8 +1,9 @@
 import { ImageResponse } from "next/og";
+import { site } from "@/lib/site";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Oscar Bucio, Backend / AI Engineer";
+export const alt = `${site.name}, ${site.role}`;
 
 export default function OpenGraphImage() {
   return new ImageResponse(
@@ -12,54 +13,83 @@ export default function OpenGraphImage() {
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          padding: 80,
-          backgroundColor: "#05060c",
-          backgroundImage:
-            "radial-gradient(760px 480px at 85% 0%, rgba(77,141,255,0.22), transparent 70%)",
-          color: "#e6e9f0",
+          backgroundColor: "#0b0d10",
+          color: "#f0f1ec",
           fontSize: 32,
         }}
       >
         <div
           style={{
+            width: "78%",
+            height: "100%",
             display: "flex",
-            alignSelf: "flex-start",
-            padding: "10px 22px",
-            borderRadius: 999,
-            border: "1px solid rgba(77,141,255,0.4)",
-            color: "#4d8dff",
-            fontSize: 22,
-            letterSpacing: 5,
-            textTransform: "uppercase",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            padding: 72,
           }}
         >
-          Backend / AI Engineer
-        </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-          <div style={{ fontSize: 96, fontWeight: 600, letterSpacing: -4 }}>
-            Oscar Bucio
+          <div
+            style={{
+              display: "flex",
+              color: "#88a9ee",
+              fontSize: 20,
+              fontWeight: 600,
+              letterSpacing: 3,
+              textTransform: "uppercase",
+            }}
+          >
+            {site.role}
           </div>
-          <div style={{ fontSize: 36, color: "#98a2b6", letterSpacing: -0.5 }}>
-            Backend systems that put AI agents to work.
+          <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
+            <div style={{ fontSize: 100, fontWeight: 600, letterSpacing: -6 }}>
+              {site.name}
+            </div>
+            <div
+              style={{
+                display: "flex",
+                maxWidth: 760,
+                fontSize: 30,
+                lineHeight: 1.28,
+                color: "#a1a7b3",
+                letterSpacing: -0.5,
+              }}
+            >
+              Typed services, agent integrations and serverless workflows for
+              banking and fintech.
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              width: "100%",
+              paddingTop: 22,
+              borderTop: "1px solid #2a3038",
+              color: "#a1a7b3",
+              fontSize: 20,
+            }}
+          >
+            <div style={{ display: "flex" }}>Python / AWS / LLM agents</div>
+            <div style={{ display: "flex" }}>
+              {site.linkedin.replace(/^https?:\/\/(www\.)?/, "")}
+            </div>
           </div>
         </div>
         <div
           style={{
+            width: "22%",
+            height: "100%",
             display: "flex",
-            justifyContent: "space-between",
-            width: "100%",
-            color: "#98a2b6",
-            fontSize: 24,
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "#215dd8",
+            color: "#f7f9ff",
+            fontSize: 76,
+            fontWeight: 700,
+            letterSpacing: -5,
           }}
         >
-          <div style={{ display: "flex" }}>
-            Python, AWS serverless, LLM agents
-          </div>
-          <div style={{ display: "flex", color: "#4d8dff" }}>
-            linkedin.com/in/oscarbucio
-          </div>
+          <div style={{ display: "flex" }}>OB</div>
         </div>
       </div>
     ),

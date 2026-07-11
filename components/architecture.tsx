@@ -3,21 +3,38 @@ import { Reveal } from "@/components/reveal";
 
 export function Architecture() {
   return (
-    <section className="mx-auto max-w-[1200px] px-6 py-24 lg:py-32">
+    <section
+      aria-labelledby="architecture-title"
+      className="mx-auto max-w-[1320px] px-5 py-24 sm:px-8 lg:px-10 lg:py-36"
+    >
       <Reveal>
-        <h2 className="text-3xl font-medium tracking-tight md:text-4xl">
-          Agent systems, end to end
+        <h2
+          id="architecture-title"
+          className="max-w-[11ch] text-4xl leading-[0.98] font-medium tracking-[-0.045em] text-balance md:text-5xl"
+        >
+          Representative architecture.
         </h2>
-        <p className="mt-4 max-w-[65ch] leading-relaxed text-pretty text-muted">
-          How I wire LLM agents into production: one orchestrator, typed agent
-          tools, and the backend services behind them.
+        <p className="mt-6 max-w-[52ch] leading-relaxed text-pretty text-muted">
+          The orchestrator owns routing and policy. Typed tools keep agents
+          separate from data, APIs and event workflows.
         </p>
       </Reveal>
-      <Reveal delay={0.1} className="mt-14">
-        <div className="rounded-[2rem] bg-foreground/[0.04] p-2 ring-1 ring-foreground/10">
-          <div className="relative overflow-hidden rounded-[calc(2rem-0.5rem)] bg-surface bg-[radial-gradient(42rem_22rem_at_50%_0%,color-mix(in_srgb,var(--accent)_10%,transparent),transparent_70%)] py-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] sm:py-10">
-            <AgentDiagram />
+      <Reveal delay={0.1} className="mt-12 sm:mt-14">
+        <div
+          role="group"
+          aria-labelledby="architecture-diagram-title"
+          aria-describedby="architecture-diagram-description"
+          className="overflow-hidden rounded-2xl border border-edge bg-surface"
+        >
+          <div className="flex min-h-12 items-center border-b border-edge bg-surface-strong/45 px-4 py-3 sm:px-5">
+            <p
+              id="architecture-diagram-title"
+              className="font-mono text-xs font-medium tracking-[0.1em] text-foreground uppercase"
+            >
+              Representative agent topology
+            </p>
           </div>
+          <AgentDiagram />
         </div>
       </Reveal>
     </section>

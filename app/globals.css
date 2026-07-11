@@ -1,37 +1,65 @@
 @import "tailwindcss";
 
-/* Semantic tokens: light theme values, overridden for dark below */
 :root {
-  --background: #fafafa;
-  --foreground: #16181d;
-  --muted: #4d5561;
-  --surface: #f0f2f5;
-  --edge: #e2e5ea;
-  --accent: #1d4ed8;
+  color-scheme: light;
+  --background: #f4f5f2;
+  --foreground: #111419;
+  --muted: #59606b;
+  --surface: #e9ebe7;
+  --surface-strong: #dfe3e6;
+  --edge: #d2d7d2;
+  --diagram-rail: #6d7480;
+  --accent: #215dd8;
+  --accent-ink: #f7f9ff;
+  --nav: rgb(244 245 242 / 0.86);
 }
 
 :root[data-theme="dark"] {
-  --background: #05060c;
-  --foreground: #e6e9f0;
-  --muted: #98a2b6;
-  --surface: #0a0e18;
-  --edge: #1b2233;
-  --accent: #4d8dff;
+  color-scheme: dark;
+  --background: #0b0d10;
+  --foreground: #f0f1ec;
+  --muted: #a1a7b3;
+  --surface: #12161a;
+  --surface-strong: #1a2026;
+  --edge: #2a3038;
+  --diagram-rail: #727d90;
+  --accent: #88a9ee;
+  --accent-ink: #0a1733;
+  --nav: rgb(11 13 16 / 0.84);
 }
 
-/* Fallback before the theme script runs or when JS is disabled */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --background: #05060c;
-    --foreground: #e6e9f0;
-    --muted: #98a2b6;
-    --surface: #0a0e18;
-    --edge: #1b2233;
-    --accent: #4d8dff;
+    color-scheme: dark;
+    --background: #0b0d10;
+    --foreground: #f0f1ec;
+    --muted: #a1a7b3;
+    --surface: #12161a;
+    --surface-strong: #1a2026;
+    --edge: #2a3038;
+    --diagram-rail: #727d90;
+    --accent: #88a9ee;
+    --accent-ink: #0a1733;
+    --nav: rgb(11 13 16 / 0.84);
   }
 }
 
-/* Theme toggle shows the icon for the mode it switches to */
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --nav: #f4f5f2;
+  }
+
+  :root[data-theme="dark"] {
+    --nav: #0b0d10;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --nav: #0b0d10;
+    }
+  }
+}
+
 .theme-icon-sun {
   display: none;
 }
@@ -55,8 +83,10 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
   --color-edge: var(--edge);
   --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -68,14 +98,16 @@
 }
 
 body {
+  overflow-x: clip;
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
   background: var(--accent);
-  color: var(--background);
+  color: var(--accent-ink);
 }
 
 :focus-visible {
@@ -85,12 +117,9 @@ body {
 
 /* Anchored sections clear the floating nav */
 section[id] {
-  scroll-margin-top: 6.5rem;
+  scroll-margin-top: 5.5rem;
 }
 
-/* Data-bus current: dash pattern flowing along the diagram connectors.
-   The offset shift equals one dasharray period, so the loop is seamless
-   and the speed is identical on every path regardless of its length. */
 @keyframes dash-flow {
   to {
     stroke-dashoffset: -18;
@@ -109,66 +138,17 @@ section[id] {
   }
 }
 
-/* Breathing glow behind the diagram's orchestrator card */
-@keyframes breathe {
-  from {
-    opacity: 0.35;
-  }
-  to {
-    opacity: 0.85;
-  }
-}
-
-.animate-breathe {
-  animation: breathe 3.8s ease-in-out infinite alternate;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-breathe {
-    animation: none;
-    opacity: 0.5;
-  }
-}
-
-/* Film-grain texture, applied once to a fixed overlay in the layout */
 .grain {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Stack marquee: duplicated track slides by half its width for a seamless loop */
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.marquee-track {
-  animation: marquee 45s linear infinite;
-}
-
-.marquee:hover .marquee-track,
-.marquee[data-paused="true"] .marquee-track {
-  animation-play-state: paused;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none;
-    flex-wrap: wrap;
-    width: auto;
-  }
-  /* The visible row must wrap too; it is nowrap + shrink-0 for the animation */
-  .marquee-track > ul {
-    flex-wrap: wrap;
-    flex-shrink: 1;
-    row-gap: 1.5rem;
-  }
-  .marquee-dup,
-  .marquee-fade,
-  .marquee-toggle {
-    display: none;
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

@@ -1,134 +1,79 @@
 "use client";
 
 import Image from "next/image";
-import { Fragment } from "react";
-import {
-  motion,
-  useMotionValue,
-  useReducedMotion,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { CtaLink } from "@/components/cta";
 
-const ease = [0.32, 0.72, 0, 1] as const;
-const HEADLINE = "Backend systems that put AI agents to work.".split(" ");
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function Hero() {
   const reduce = useReducedMotion();
-  const { scrollY } = useScroll();
-  const parallax = useTransform(scrollY, [0, 700], [0, 56]);
-
-  // Pointer tilt on the portrait, driven by motion values (no re-renders)
-  const tiltX = useMotionValue(0);
-  const tiltY = useMotionValue(0);
-  const springTiltX = useSpring(tiltX, { stiffness: 160, damping: 18 });
-  const springTiltY = useSpring(tiltY, { stiffness: 160, damping: 18 });
-
-  const onPortraitMove = (e: React.PointerEvent<HTMLElement>) => {
-    if (reduce) return;
-    const rect = e.currentTarget.getBoundingClientRect();
-    const px = (e.clientX - rect.left) / rect.width - 0.5;
-    const py = (e.clientY - rect.top) / rect.height - 0.5;
-    tiltY.set(px * 10);
-    tiltX.set(-py * 8);
-  };
-
-  const onPortraitLeave = () => {
-    tiltX.set(0);
-    tiltY.set(0);
-  };
 
   const rise = (delay: number) => ({
     "data-reveal": true,
-    initial: reduce
-      ? false
-      : ({ opacity: 0, y: 28, filter: "blur(10px)" } as const),
-    animate: { opacity: 1, y: 0, filter: "blur(0px)" },
-    transition: { duration: 0.9, delay, ease },
+    initial: reduce ? false : ({ opacity: 0, y: 24 } as const),
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.72, delay, ease: EASE },
   });
 
   return (
-    <section className="relative overflow-hidden">
-      {/* Radial mesh orbs for depth; pure gradients, no filter cost */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-40 right-[-12%] h-[42rem] w-[42rem] rounded-full bg-[radial-gradient(closest-side,color-mix(in_srgb,var(--accent)_17%,transparent),transparent)]" />
-        <div className="absolute bottom-[-30%] left-[-18%] h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(closest-side,color-mix(in_srgb,var(--accent)_9%,transparent),transparent)]" />
-      </div>
-      <div className="mx-auto grid max-w-[1200px] items-center gap-12 px-6 pt-36 pb-24 lg:grid-cols-12 lg:pt-44 lg:pb-32">
-        <div className="lg:col-span-7">
+    <section className="relative min-h-[100dvh] overflow-hidden border-b border-edge">
+      <div aria-hidden className="absolute inset-x-0 bottom-0 h-[28%] bg-surface" />
+      <div className="relative mx-auto grid min-h-[100dvh] max-w-[1320px] items-center gap-8 px-5 pt-24 pb-7 sm:px-8 md:grid-cols-12 md:gap-8 lg:gap-12 lg:px-10 lg:pb-10">
+        <div className="md:col-span-7 md:pr-4 lg:pr-6">
           <motion.p
             {...rise(0)}
-            className="inline-flex items-center rounded-full px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.2em] text-accent ring-1 ring-accent/25"
+            className="font-mono text-xs font-medium tracking-[0.12em] text-accent uppercase"
           >
-            Backend / AI Engineer
+            Oscar Bucio / Backend &amp; AI Engineer
           </motion.p>
-          <h1 className="mt-8 text-4xl leading-[1.08] tracking-tighter text-balance md:text-5xl lg:text-6xl">
-            {HEADLINE.map((word, i) => (
-              <Fragment key={i}>
-                <span className="-mb-[0.12em] inline-block overflow-hidden pb-[0.12em] align-bottom">
-                  <motion.span
-                    data-reveal
-                    className="inline-block"
-                    initial={reduce ? false : { y: "115%" }}
-                    animate={{ y: "0%" }}
-                    transition={{ duration: 0.8, delay: 0.08 + i * 0.05, ease }}
-                  >
-                    {word}
-                  </motion.span>
-                </span>
-                {i < HEADLINE.length - 1 && " "}
-              </Fragment>
-            ))}
-          </h1>
+          <motion.h1
+            {...rise(0.08)}
+            className="mt-5 text-[clamp(3.35rem,8.1vw,7.2rem)] leading-[0.88] font-medium tracking-[-0.075em] text-balance"
+          >
+            Backends for production AI.
+          </motion.h1>
           <motion.p
-            {...rise(0.34)}
-            className="mt-7 max-w-[52ch] text-lg leading-relaxed text-muted"
+            {...rise(0.18)}
+            className="mt-7 max-w-[49ch] text-base leading-relaxed text-pretty text-muted sm:text-lg"
           >
-            Software engineer specializing in Python services, AWS serverless
-            infrastructure, and the tooling that lets LLM agents run real
-            business processes.
+            I build typed services, agent integrations and serverless
+            workflows for banking and fintech teams.
           </motion.p>
-          <motion.div {...rise(0.46)} className="mt-11 flex flex-wrap gap-4">
-            <CtaLink href="#contact">Get in touch</CtaLink>
-            <CtaLink href="#experience" variant="ghost">
-              View experience
+          <motion.div
+            {...rise(0.28)}
+            className="mt-8 flex flex-col gap-3 min-[400px]:flex-row min-[400px]:flex-wrap"
+          >
+            <CtaLink href="#experience">Selected systems</CtaLink>
+            <CtaLink href="mailto:oscarbucio2001@gmail.com" variant="ghost">
+              Email me
             </CtaLink>
           </motion.div>
         </div>
+
         <motion.figure
           data-reveal
-          initial={reduce ? false : { opacity: 0, scale: 0.97 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.3, ease }}
-          style={{
-            y: reduce ? 0 : parallax,
-            rotateX: springTiltX,
-            rotateY: springTiltY,
-            transformPerspective: 900,
-          }}
-          onPointerMove={onPortraitMove}
-          onPointerLeave={onPortraitLeave}
-          className="relative mx-auto w-full max-w-md lg:col-span-5 lg:translate-y-4"
+          initial={reduce ? false : { opacity: 0, scale: 0.985, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.86, delay: 0.14, ease: EASE }}
+          className="relative h-[32dvh] min-h-52 w-full overflow-hidden rounded-2xl border border-edge bg-surface sm:min-h-64 md:col-span-5 md:h-[min(68dvh,38rem)] md:min-h-[28rem] lg:h-[min(68dvh,43rem)] lg:min-h-[34rem]"
         >
-          {/* Double-bezel enclosure: outer tray + inner glass core */}
-          <div className="rounded-[2rem] bg-foreground/[0.04] p-2 ring-1 ring-foreground/10">
-            <div className="relative aspect-4/5 overflow-hidden rounded-[calc(2rem-0.5rem)]">
-              <Image
-                src="/images/portrait.jpg"
-                alt="Oscar Bucio"
-                fill
-                priority
-                sizes="(max-width: 512px) 100vw, (max-width: 1024px) 448px, 40vw"
-                className="object-cover"
-              />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 rounded-[inherit] shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] ring-1 ring-white/10 ring-inset"
-              />
-            </div>
-          </div>
+          <Image
+            src="/images/portrait.jpg"
+            alt="Portrait of Oscar Bucio"
+            fill
+            priority
+            sizes="(max-width: 767px) 100vw, 40vw"
+            className="object-cover object-[50%_38%] grayscale contrast-[1.04]"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_58%,rgb(5_10_18_/_0.28))]"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 ring-1 ring-white/10 ring-inset"
+          />
         </motion.figure>
       </div>
     </section>

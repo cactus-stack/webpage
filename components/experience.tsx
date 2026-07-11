@@ -3,6 +3,7 @@ import { Reveal } from "@/components/reveal";
 
 type Job = {
   company: string;
+  focus: string;
   role: string;
   period: string;
   location: string;
@@ -13,38 +14,42 @@ type Job = {
 const jobs: Job[] = [
   {
     company: "Plexus Tech",
-    role: "Software Engineer, assigned to BBVA",
+    focus: "Conversational banking integration",
+    role: "Software Engineer, BBVA project",
     period: "2026 - Present",
     location: "Mexico City",
     summary:
-      "Building the integration layer between AI agents and banking services: typed Python tools, orchestration patterns, and enterprise auth flows, validated end to end against real environments.",
+      "Building typed Python tools, orchestration and enterprise authentication that connect AI agents to banking services, validated end to end in real environments.",
     stack: ["Python", "OpenAI Agents SDK", "Pydantic", "AWS"],
   },
   {
     company: "FIXAT",
+    focus: "Serverless financial RAG",
     role: "Software Engineer",
     period: "2024 - 2025",
     location: "Remote",
     summary:
-      "Built a serverless RAG chatbot on Amazon Bedrock and LangChain, plus REST APIs for financial and fiscal data, orchestrated with Step Functions, SQS, and EventBridge.",
+      "Built a serverless RAG chatbot on Amazon Bedrock and LangChain, plus financial and fiscal APIs orchestrated with Step Functions, SQS and EventBridge.",
     stack: ["Python", "AWS Lambda", "Bedrock", "LangChain", "MongoDB"],
   },
   {
     company: "Hitss México",
+    focus: "API quality for Claro Drive",
     role: "Backend / QA Intern",
     period: "2023 - 2024",
     location: "Remote",
     summary:
-      "Tested APIs for the Claro Drive platform: Postman suites plus automated scripts in Python and JavaScript, with detailed documentation for the team.",
+      "Tested Claro Drive APIs with Postman suites and automated Python and JavaScript checks, then documented failures and expected behavior for the team.",
     stack: ["Python", "JavaScript", "Postman"],
   },
   {
     company: "BASF",
+    focus: "Python process automation",
     role: "Python Automation / Digitalization Intern",
     period: "2022 - 2023",
     location: "Mexico",
     summary:
-      "Led process automation and digitalization with Python and UiPath, and delivered pandas and Power BI analyses that informed business decisions.",
+      "Automated operational processes with Python and UiPath, then delivered pandas and Power BI analyses used in business decisions.",
     stack: ["Python", "UiPath", "pandas", "Power BI"],
   },
 ];
@@ -53,55 +58,56 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="mx-auto grid max-w-[1200px] gap-14 px-6 py-24 lg:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] lg:gap-20 lg:py-32"
+      className="mx-auto grid max-w-[1320px] gap-14 px-5 py-24 sm:px-8 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:py-36"
     >
-      <div className="lg:sticky lg:top-24 lg:self-start">
+      <div className="lg:sticky lg:top-28 lg:col-span-4 lg:self-start">
         <Reveal>
-          <h2 className="text-3xl font-medium tracking-tight md:text-4xl">Experience</h2>
-          <p className="mt-4 max-w-[40ch] leading-relaxed text-pretty text-muted">
-            Four years across banking, fintech, and industrial automation.
+          <h2 className="max-w-[9ch] text-4xl leading-[0.98] font-medium tracking-[-0.045em] text-balance md:text-5xl">
+            Selected systems.
+          </h2>
+          <p className="mt-6 max-w-[38ch] leading-relaxed text-pretty text-muted">
+            Production work across banking, fintech and industrial automation,
+            with the roles and tools behind it.
           </p>
           <a
             href="https://www.linkedin.com/in/oscarbucio"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center gap-1 text-sm text-accent transition-opacity hover:opacity-80"
+            className="mt-7 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-accent transition-colors duration-300 hover:text-foreground"
           >
             Full history on LinkedIn
-            <ArrowUpRight size={16} />
+            <ArrowUpRight size={16} aria-hidden />
           </a>
         </Reveal>
       </div>
-      <div className="divide-y divide-edge">
+      <div className="lg:col-span-7 lg:col-start-6">
         {jobs.map((job, i) => (
           <Reveal
             key={job.company}
             delay={i * 0.05}
-            className="py-12 first:pt-0 last:pb-0"
+            className="border-t border-edge py-9 first:pt-8 last:pb-0"
           >
             <article className="group">
-              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                <h3 className="text-xl font-medium tracking-tight transition-colors duration-300 group-hover:text-accent">
+              <div className="grid gap-2 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-baseline sm:gap-5">
+                <p className="text-sm font-medium text-accent">
                   {job.company}
-                </h3>
-                <span className="font-mono text-sm text-muted">
+                </p>
+                <span className="font-mono text-xs tracking-[0.06em] text-muted">
                   {job.period}
                 </span>
               </div>
-              <p className="mt-1 text-sm text-muted">
+              <h3 className="mt-3 text-2xl font-medium tracking-[-0.035em] transition-colors duration-300 group-hover:text-accent sm:text-3xl">
+                {job.focus}
+              </h3>
+              <p className="mt-2 text-sm text-muted">
                 {job.role}, {job.location}
               </p>
-              <p className="mt-5 leading-relaxed text-muted">{job.summary}</p>
-              <ul className="mt-6 flex flex-wrap gap-2">
-                {job.stack.map((tech) => (
-                  <li
-                    key={tech}
-                    className="rounded-full border border-edge px-3 py-1 font-mono text-xs text-muted"
-                  >
-                    {tech}
-                  </li>
-                ))}
-              </ul>
+              <p className="mt-5 max-w-[65ch] leading-relaxed text-pretty text-muted">
+                {job.summary}
+              </p>
+              <p className="mt-6 font-mono text-xs leading-relaxed tracking-[0.045em] text-muted uppercase">
+                {job.stack.join(" / ")}
+              </p>
             </article>
           </Reveal>
         ))}

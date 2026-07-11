@@ -6,54 +6,50 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import { CtaLink } from "@/components/cta";
 import { Reveal } from "@/components/reveal";
+import { site } from "@/lib/site";
 
 const channels = [
   {
     label: "GitHub",
-    value: "github.com/Dany0343",
-    href: "https://github.com/Dany0343",
+    value: "github.com/cactus-stack",
+    href: site.github,
     Icon: GithubLogo,
   },
   {
     label: "LinkedIn",
     value: "linkedin.com/in/oscarbucio",
-    href: "https://www.linkedin.com/in/oscarbucio",
+    href: site.linkedin,
     Icon: LinkedinLogo,
   },
   {
     label: "Email",
-    value: "oscarbucio2001@gmail.com",
-    href: "mailto:oscarbucio2001@gmail.com",
+    value: site.email,
+    href: `mailto:${site.email}`,
     Icon: EnvelopeSimple,
   },
 ];
 
 export function Contact() {
   return (
-    <section id="contact" className="relative overflow-hidden border-t border-edge">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10"
-      >
-        <div className="absolute -bottom-48 left-[10%] h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(closest-side,color-mix(in_srgb,var(--accent)_11%,transparent),transparent)]" />
-      </div>
-      <div className="mx-auto grid max-w-[1200px] gap-14 px-6 py-24 lg:grid-cols-12 lg:py-36">
-        <Reveal className="lg:col-span-7">
-          <h2 className="max-w-[18ch] text-4xl leading-none tracking-tighter text-balance md:text-5xl lg:text-6xl">
-            Looking for a backend or AI engineer?
+    <section id="contact" className="border-t border-edge bg-surface">
+      <div className="mx-auto grid max-w-[1320px] gap-16 px-5 py-24 sm:px-8 lg:px-10 lg:py-36 xl:grid-cols-12 xl:gap-10">
+        <Reveal className="xl:col-span-7">
+          <h2 className="max-w-[11ch] text-5xl leading-[0.94] font-medium tracking-[-0.06em] text-balance sm:text-6xl lg:text-7xl">
+            Open to backend and AI roles.
           </h2>
-          <p className="mt-6 max-w-[48ch] text-lg leading-relaxed text-pretty text-muted">
-            Open to remote roles with U.S. teams, working from Mexico City on
-            U.S. hours.
+          <p className="mt-7 max-w-[47ch] text-lg leading-relaxed text-pretty text-muted">
+            I&apos;m open to remote backend and AI engineering roles with U.S.
+            teams.
           </p>
-          <div className="mt-10">
-            <CtaLink href="mailto:oscarbucio2001@gmail.com">Email me</CtaLink>
+          <div className="mt-9">
+            <CtaLink href={`mailto:${site.email}`}>Email me</CtaLink>
           </div>
         </Reveal>
-        <Reveal className="lg:col-span-4 lg:col-start-9" delay={0.1}>
-          <ul className="divide-y divide-edge">
+
+        <Reveal className="xl:col-span-4 xl:col-start-9" delay={0.08}>
+          <ul>
             {channels.map(({ label, value, href, Icon }) => (
-              <li key={label}>
+              <li key={label} className="border-t border-edge">
                 <a
                   href={href}
                   target={href.startsWith("mailto:") ? undefined : "_blank"}
@@ -62,18 +58,19 @@ export function Contact() {
                       ? undefined
                       : "noopener noreferrer"
                   }
-                  className="group -mx-4 flex items-center justify-between gap-4 rounded-2xl px-4 py-5 transition-colors duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-foreground/[0.04]"
+                  className="group grid min-h-20 grid-cols-[2.5rem_minmax(0,1fr)_1.5rem] items-center gap-3 py-4 transition-[color,transform] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-1"
                 >
-                  <span className="flex items-center gap-3">
-                    <Icon size={20} className="text-muted" />
-                    <span className="flex flex-col">
-                      <span className="text-sm text-muted">{label}</span>
-                      <span className="font-mono text-sm transition-colors duration-300 group-hover:text-accent">{value}</span>
+                  <Icon size={20} aria-hidden className="text-muted" />
+                  <span className="min-w-0">
+                    <span className="block text-xs text-muted">{label}</span>
+                    <span className="mt-1 block break-words font-mono text-xs leading-relaxed transition-colors duration-300 group-hover:text-accent sm:text-sm">
+                      {value}
                     </span>
                   </span>
                   <ArrowUpRight
                     size={18}
-                    className="text-muted transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
+                    aria-hidden
+                    className="text-muted transition-[color,transform] duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
                   />
                 </a>
               </li>

@@ -1,7 +1,5 @@
-import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import type { ReactNode } from "react";
-
-const EASE = "ease-[cubic-bezier(0.32,0.72,0,1)]";
 
 type CtaLinkProps = {
   href: string;
@@ -9,26 +7,23 @@ type CtaLinkProps = {
   variant?: "primary" | "ghost";
 };
 
-/** Pill CTA with the trailing icon nested in its own circular island */
 export function CtaLink({ href, children, variant = "primary" }: CtaLinkProps) {
   const shell =
     variant === "primary"
-      ? "bg-foreground text-background hover:opacity-90"
-      : "ring-1 ring-edge hover:ring-accent/50";
-  const island =
-    variant === "primary" ? "bg-background/20" : "bg-foreground/[0.06]";
+      ? "border-accent bg-accent text-accent-ink hover:bg-foreground hover:border-foreground hover:text-background"
+      : "border-edge bg-transparent text-foreground hover:border-foreground";
 
   return (
     <a
       href={href}
-      className={`group inline-flex items-center gap-3 rounded-full py-2 pl-6 pr-2 font-medium transition-all duration-500 ${EASE} active:scale-[0.98] ${shell}`}
+      className={`group inline-flex min-h-12 items-center justify-center gap-3 rounded-full border px-5 text-sm font-medium whitespace-nowrap transition-[background-color,border-color,color,transform] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-[0.98] ${shell}`}
     >
       {children}
-      <span
-        className={`flex h-9 w-9 items-center justify-center rounded-full transition-transform duration-500 ${EASE} group-hover:-translate-y-px group-hover:translate-x-0.5 group-hover:scale-105 ${island}`}
-      >
-        <ArrowUpRight size={15} />
-      </span>
+      <ArrowRight
+        size={16}
+        aria-hidden
+        className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1"
+      />
     </a>
   );
 }

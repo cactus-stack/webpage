@@ -19,16 +19,26 @@ const facts = [
 
 export function Facts() {
   return (
-    <section className="border-y border-edge bg-surface">
-      <dl className="mx-auto grid max-w-[1200px] divide-y divide-edge px-6 lg:grid-cols-3 lg:divide-x lg:divide-y-0">
+    <section aria-label="Profile summary" className="bg-surface">
+      <dl className="mx-auto grid max-w-[1320px] px-5 sm:px-8 lg:grid-cols-12 lg:px-10">
         {facts.map((fact, i) => (
           <Reveal
             key={fact.label}
             delay={i * 0.08}
-            className="py-8 lg:px-8 lg:first:pl-0 lg:last:pr-0"
+            className={`border-b border-edge py-7 last:border-b-0 lg:border-b-0 lg:border-l lg:px-7 lg:py-9 lg:first:border-l-0 lg:first:pl-0 lg:last:pr-0 ${
+              i === 0 ? "lg:col-span-6" : "lg:col-span-3"
+            }`}
           >
-            <dt className="text-sm text-muted">{fact.label}</dt>
-            <dd className="mt-2 leading-relaxed">{fact.value}</dd>
+            <dt className="font-mono text-xs tracking-[0.08em] text-muted uppercase">
+              {fact.label}
+            </dt>
+            <dd
+              className={`mt-3 leading-relaxed text-pretty ${
+                i === 0 ? "max-w-[46ch] text-lg" : "text-sm"
+              }`}
+            >
+              {fact.value}
+            </dd>
           </Reveal>
         ))}
       </dl>

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { site } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,27 +14,42 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? new URL(`https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`)
-    : new URL("http://localhost:3000"),
-  title: "Oscar Bucio | Backend / AI Engineer",
-  description:
-    "Backend / AI engineer: Python services, AWS serverless, and LLM agent tooling. U.S. citizen based in Mexico City, working remotely with U.S. teams.",
+  metadataBase: new URL(site.url),
+  title: `${site.name} | ${site.role}`,
+  description: site.description,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Oscar Bucio | Backend / AI Engineer",
-    description:
-      "Python backend systems, AWS serverless infrastructure, and LLM agent tooling.",
+    title: `${site.name} | ${site.role}`,
+    description: site.description,
+    url: site.url,
+    siteName: site.name,
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
+    title: `${site.name} | ${site.role}`,
+    description: site.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
-    { media: "(prefers-color-scheme: dark)", color: "#070b14" },
+    { media: "(prefers-color-scheme: light)", color: "#f4f5f2" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b0d10" },
   ],
 };
 
