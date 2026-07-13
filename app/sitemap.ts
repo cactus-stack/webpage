@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: site.url,
-      lastModified: new Date(),
+      lastModified: new Date(site.lastModified),
       changeFrequency: "monthly",
       priority: 1,
     },

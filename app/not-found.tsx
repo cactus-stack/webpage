@@ -1,4 +1,19 @@
+import type { Metadata } from "next";
 import { CtaLink } from "@/components/cta";
+
+export const metadata: Metadata = {
+  title: "Page not found",
+  description: "The requested page could not be found.",
+  alternates: {
+    canonical: null,
+  },
+  openGraph: null,
+  twitter: null,
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function NotFound() {
   return (

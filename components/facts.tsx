@@ -2,42 +2,44 @@ import { Reveal } from "@/components/reveal";
 
 const facts = [
   {
-    label: "Now",
-    value:
-      "Software Engineer at Plexus Tech, building conversational AI for BBVA.",
+    label: "Current focus",
+    value: "Conversational AI for banking",
+    detail: "Software Engineer at Plexus Tech, BBVA project.",
   },
   {
-    label: "Work authorization",
-    value: "U.S. citizen based in Mexico City, no visa sponsorship required.",
+    label: "Experience",
+    value: "Backend to agent systems",
+    detail: "Fintech, API quality and process automation since 2022.",
   },
   {
-    label: "Education",
-    value:
-      "B.Eng. in Systems Engineering, Instituto Politécnico Nacional (IPN).",
+    label: "Work status",
+    value: "U.S. work authorized",
+    detail: "Based in Mexico City. No sponsorship required.",
   },
 ];
 
 export function Facts() {
   return (
-    <section aria-label="Profile summary" className="bg-surface">
-      <dl className="mx-auto grid max-w-[1320px] px-5 sm:px-8 lg:grid-cols-12 lg:px-10">
-        {facts.map((fact, i) => (
+    <section aria-label="Professional profile" className="bg-surface">
+      <dl className="mx-auto grid max-w-[1380px] px-5 sm:px-8 lg:grid-cols-12 lg:px-10">
+        {facts.map((fact, index) => (
           <Reveal
             key={fact.label}
-            delay={i * 0.08}
-            className={`border-b border-edge py-7 last:border-b-0 lg:border-b-0 lg:border-l lg:px-7 lg:py-9 lg:first:border-l-0 lg:first:pl-0 lg:last:pr-0 ${
-              i === 0 ? "lg:col-span-6" : "lg:col-span-3"
+            delay={index * 0.07}
+            className={`border-b border-edge py-8 last:border-b-0 lg:border-b-0 lg:border-l lg:px-8 lg:py-10 lg:first:border-l-0 lg:first:pl-0 lg:last:pr-0 ${
+              index === 0 ? "lg:col-span-5" : index === 1 ? "lg:col-span-4" : "lg:col-span-3"
             }`}
           >
-            <dt className="font-mono text-xs tracking-[0.08em] text-muted uppercase">
+            <dt className="font-mono text-[11px] tracking-[0.08em] text-muted uppercase">
               {fact.label}
             </dt>
-            <dd
-              className={`mt-3 leading-relaxed text-pretty ${
-                i === 0 ? "max-w-[46ch] text-lg" : "text-sm"
-              }`}
-            >
-              {fact.value}
+            <dd className="mt-4">
+              <span className="block text-xl font-medium tracking-[-0.035em] sm:text-2xl">
+                {fact.value}
+              </span>
+              <span className="mt-2 block max-w-[38ch] text-sm leading-relaxed text-muted">
+                {fact.detail}
+              </span>
             </dd>
           </Reveal>
         ))}

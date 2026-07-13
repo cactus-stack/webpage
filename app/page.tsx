@@ -1,11 +1,11 @@
 import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { Facts } from "@/components/facts";
+import { Work } from "@/components/work";
+import { Principles } from "@/components/principles";
 import { Experience } from "@/components/experience";
-import { Capabilities } from "@/components/capabilities";
-import { Architecture } from "@/components/architecture";
-import { Stack } from "@/components/stack";
 import { Contact } from "@/components/contact";
+import { PageProgress } from "@/components/page-progress";
 import { site } from "@/lib/site";
 
 const profileJsonLd = {
@@ -18,7 +18,18 @@ const profileJsonLd = {
     jobTitle: site.role,
     url: site.url,
     email: `mailto:${site.email}`,
+    image: `${site.url}/images/portrait.jpg`,
     sameAs: [site.github, site.linkedin],
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Instituto Politécnico Nacional",
+    },
+    knowsAbout: [
+      "Python backend engineering",
+      "AI agent integrations",
+      "Serverless architecture",
+      "Financial technology",
+    ],
   },
 };
 
@@ -35,18 +46,18 @@ export default function Home() {
       >
         Skip to content
       </a>
+      <PageProgress />
       <Nav />
       <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">
         <Hero />
         <Facts />
+        <Work />
+        <Principles />
         <Experience />
-        <Capabilities />
-        <Architecture />
-        <Stack />
         <Contact />
       </main>
       <footer className="border-t border-edge">
-        <div className="mx-auto flex max-w-[1320px] flex-col gap-5 px-5 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
+        <div className="mx-auto flex max-w-[1380px] flex-col gap-5 px-5 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
           <p>&copy; 2026 {site.name}</p>
           <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-6 gap-y-3">
             <a className="transition-colors hover:text-foreground" href="#main">
@@ -59,6 +70,7 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               GitHub
+              <span className="sr-only">, opens in a new tab</span>
             </a>
             <a
               className="transition-colors hover:text-foreground"
@@ -67,6 +79,7 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               LinkedIn
+              <span className="sr-only">, opens in a new tab</span>
             </a>
           </nav>
         </div>

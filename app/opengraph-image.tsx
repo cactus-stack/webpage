@@ -13,8 +13,8 @@ export default function OpenGraphImage() {
           width: "100%",
           height: "100%",
           display: "flex",
-          backgroundColor: "#0b0d10",
-          color: "#f0f1ec",
+          backgroundColor: "#080a0d",
+          color: "#eff1f5",
           fontSize: 32,
         }}
       >
@@ -31,7 +31,7 @@ export default function OpenGraphImage() {
           <div
             style={{
               display: "flex",
-              color: "#88a9ee",
+              color: "#8aa8ff",
               fontSize: 20,
               fontWeight: 600,
               letterSpacing: 3,
@@ -50,12 +50,11 @@ export default function OpenGraphImage() {
                 maxWidth: 760,
                 fontSize: 30,
                 lineHeight: 1.28,
-                color: "#a1a7b3",
+                color: "#a4acb8",
                 letterSpacing: -0.5,
               }}
             >
-              Typed services, agent integrations and serverless workflows for
-              banking and fintech.
+              Backends, agent tools and cloud workflows for production AI.
             </div>
           </div>
           <div
@@ -64,8 +63,8 @@ export default function OpenGraphImage() {
               justifyContent: "space-between",
               width: "100%",
               paddingTop: 22,
-              borderTop: "1px solid #2a3038",
-              color: "#a1a7b3",
+              borderTop: "1px solid #29313a",
+              color: "#a4acb8",
               fontSize: 20,
             }}
           >
@@ -82,7 +81,7 @@ export default function OpenGraphImage() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "#215dd8",
+            backgroundColor: "#2454dc",
             color: "#f7f9ff",
             fontSize: 76,
             fontWeight: 700,

@@ -1,36 +1,41 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: `${site.name} | ${site.role}`,
+  title: {
+    default: site.title,
+    template: `%s | ${site.name}`,
+  },
   description: site.description,
+  applicationName: site.name,
+  authors: [{ name: site.name, url: site.url }],
+  creator: site.name,
+  publisher: site.name,
+  category: "technology",
+  referrer: "strict-origin-when-cross-origin",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: `${site.name} | ${site.role}`,
+    title: site.title,
     description: site.description,
     url: site.url,
     siteName: site.name,
-    locale: "en_US",
+    locale: site.locale,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} | ${site.role}`,
+    title: site.title,
     description: site.description,
   },
   robots: {
@@ -48,8 +53,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f4f5f2" },
-    { media: "(prefers-color-scheme: dark)", color: "#0b0d10" },
+    { media: "(prefers-color-scheme: light)", color: "#f1f3f4" },
+    { media: "(prefers-color-scheme: dark)", color: "#080a0d" },
   ],
 };
 
@@ -62,7 +67,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${GeistSans.variable} ${GeistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <script
@@ -71,10 +76,6 @@ export default function RootLayout({
             __html: `try{var t=localStorage.getItem("theme");var d=t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.dataset.theme=d?"dark":"light"}catch(e){}`,
           }}
         />
-        <noscript>
-          {/* Motion sets inline opacity:0 before hydration; show content when JS is off */}
-          <style>{`[data-reveal]{opacity:1 !important;transform:none !important;filter:none !important}`}</style>
-        </noscript>
         <div
           aria-hidden
           className="grain pointer-events-none fixed inset-0 z-50 opacity-[0.028]"
