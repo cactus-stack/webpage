@@ -1,6 +1,10 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "oscarbucio-dev",
+  // Matches the Worker that Cloudflare Workers Builds created when the
+  // GitHub repo was connected (named after the repo, "webpage"). The
+  // *.workers.dev subdomain name is cosmetic; the real domain served is
+  // the custom domain route below.
+  "name": "webpage",
   "compatibility_date": "2026-09-15",
 
   // Assets-only Worker: there is no server-side entrypoint, the exported
