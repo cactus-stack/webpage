@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "oscarbucio-dev",
+  "compatibility_date": "2026-09-15",
+
+  // Assets-only Worker: there is no server-side entrypoint, the exported
+  // Next.js site is served directly from Cloudflare's edge.
+  "assets": {
+    "directory": "./out",
+    // Serve the exported not-found page for unknown paths.
+    "not_found_handling": "404-page"
+  },
+
+  "routes": [
+    {
+      "pattern": "oscarbucio.dev",
+      "custom_domain": true
+    }
+  ],
+
+  "observability": {
+    "enabled": true
+  }
+}

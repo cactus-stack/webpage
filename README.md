@@ -11,20 +11,39 @@ npm run dev
 
 Open http://localhost:3000.
 
-Set `NEXT_PUBLIC_SITE_URL` to the production origin so canonical, Open Graph, robots, sitemap, and structured data resolve to the final domain. Vercel deployments also fall back to `VERCEL_PROJECT_PRODUCTION_URL`.
+Set `NEXT_PUBLIC_SITE_URL` to override the production origin used by canonical, Open Graph, robots, sitemap, and structured data. It defaults to `https://oscarbucio.dev`.
 
 ## Production build
 
 ```bash
-npm run build
-npm start
+npm run build     # static export into out/
+npm run preview   # serve out/ through the local Workers runtime
 ```
 
 Run `npm run check` for lint, TypeScript, and a full production build.
 
-## Deploying to Vercel
+## Deploying to Cloudflare Workers
 
-Push the repository to GitHub and import it in Vercel; no extra configuration is needed. The site is fully static.
+The site is a fully static Next.js export (`output: "export"`) served by an
+assets-only Worker. Configuration lives in `wrangler.jsonc`.
+
+Pushing to `main` triggers a Workers Build that runs `npm run build` and deploys
+`out/` to https://oscarbucio.dev. Other branches get their own preview URL.
+
+To deploy by hand (needs `wrangler login` once):
+
+```bash
+npm run deploy
+```
+
+Notes:
+
+- Security headers are served from `public/_headers`, not `next.config.ts`.
+  A `headers()` function has no effect under `output: "export"`.
+- `next/image` runs with `unoptimized: true`; there is no image optimizer at
+  request time, so ship pre-sized assets.
+- Metadata routes (`robots.ts`, `sitemap.ts`, `opengraph-image.tsx`) each need
+  `export const dynamic = "force-static"` to be emitted at build time.
 
 ## Assets
 

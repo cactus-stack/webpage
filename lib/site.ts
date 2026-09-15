@@ -1,13 +1,11 @@
 const LOCAL_SITE_URL = "http://localhost:3000";
-const PRODUCTION_SITE_URL = "https://webpage-wine-delta.vercel.app";
+const PRODUCTION_SITE_URL = "https://oscarbucio.dev";
 
 const name = "Oscar Bucio";
 const role = "Backend / AI Engineer";
 
 function resolveSiteUrl() {
-  const configuredUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ??
-    process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
   if (!configuredUrl) {
     return process.env.NODE_ENV === "production"
@@ -41,7 +39,7 @@ function resolveSiteUrl() {
     return parsedUrl.origin;
   } catch (error) {
     throw new Error(
-      `Invalid site URL configured through NEXT_PUBLIC_SITE_URL or VERCEL_PROJECT_PRODUCTION_URL: ${configuredUrl}`,
+      `Invalid site URL configured through NEXT_PUBLIC_SITE_URL: ${configuredUrl}`,
       { cause: error },
     );
   }
