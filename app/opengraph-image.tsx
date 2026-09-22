@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { site } from "@/lib/site";
 
@@ -8,7 +10,12 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = `${site.name}, ${site.role}`;
 
-export default function OpenGraphImage() {
+export default async function OpenGraphImage() {
+  const portrait = await readFile(
+    join(process.cwd(), "public/images/portrait.jpg"),
+  );
+  const portraitSrc = `data:image/jpeg;base64,${portrait.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -23,7 +30,7 @@ export default function OpenGraphImage() {
       >
         <div
           style={{
-            width: "78%",
+            width: 780,
             height: "100%",
             display: "flex",
             flexDirection: "column",
@@ -50,11 +57,10 @@ export default function OpenGraphImage() {
             <div
               style={{
                 display: "flex",
-                maxWidth: 760,
+                maxWidth: 620,
                 fontSize: 30,
                 lineHeight: 1.28,
                 color: "#a4acb8",
-                letterSpacing: -0.5,
               }}
             >
               Backends, agent tools and cloud workflows for production AI.
@@ -73,25 +79,25 @@ export default function OpenGraphImage() {
           >
             <div style={{ display: "flex" }}>Python / AWS / LLM agents</div>
             <div style={{ display: "flex" }}>
-              {site.linkedin.replace(/^https?:\/\/(www\.)?/, "")}
+              {site.url.replace(/^https?:\/\//, "")}
             </div>
           </div>
         </div>
         <div
           style={{
-            width: "22%",
+            width: 420,
             height: "100%",
             display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "#2454dc",
-            color: "#f7f9ff",
-            fontSize: 76,
-            fontWeight: 700,
-            letterSpacing: -5,
+            borderLeft: "6px solid #2454dc",
           }}
         >
-          <div style={{ display: "flex" }}>OB</div>
+          <img
+            src={portraitSrc}
+            alt=""
+            width={414}
+            height={630}
+            style={{ width: 414, height: 630, objectFit: "cover" }}
+          />
         </div>
       </div>
     ),

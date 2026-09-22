@@ -4,32 +4,32 @@ import { site } from "@/lib/site";
 
 const roles = [
   {
-    company: "Plexus Tech",
-    role: "Software Engineer, BBVA project",
-    focus: "Conversational banking integration",
-    period: "2026 - Present",
+    company: "Plexus Tech, client BBVA",
+    role: "Full-Stack AI Engineer",
+    focus: "Global banking agent tools",
+    period: "Feb 2026 – Sep 2026",
     location: "Mexico City",
+  },
+  {
+    company: "Siatech",
+    role: "Software Engineer, Backend, AI & Cloud",
+    focus: "Serverless platform and LLM agent",
+    period: "Jan 2025 – Dec 2025",
+    location: "Remote",
   },
   {
     company: "FIXAT",
     role: "Software Engineer",
-    focus: "Serverless financial RAG",
-    period: "2024 - 2025",
+    focus: "Production RAG agent",
+    period: "Jul 2023 – Dec 2024",
     location: "Remote",
   },
   {
-    company: "Hitss México",
-    role: "Backend / QA Intern",
-    focus: "API quality for Claro Drive",
-    period: "2023 - 2024",
-    location: "Remote",
-  },
-  {
-    company: "BASF",
+    company: "BASF Mexicana",
     role: "Python Automation / Digitalization Intern",
-    focus: "Process automation and analysis",
-    period: "2022 - 2023",
-    location: "Mexico",
+    focus: "Workflow automation and reporting",
+    period: "Jan 2022 – Jun 2023",
+    location: "Mexico City",
   },
 ];
 
@@ -93,7 +93,8 @@ export function Experience() {
 
           <Reveal className="mt-12 border-t border-edge pt-7">
             <p className="text-sm leading-relaxed text-muted">
-              B.Eng. in Systems Engineering, Instituto Politécnico Nacional.
+              B.S. in Computer Systems Engineering, Instituto Politécnico
+              Nacional (ESCOM), 2025.
             </p>
           </Reveal>
         </div>

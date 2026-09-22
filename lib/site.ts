@@ -51,11 +51,13 @@ export const site = {
   role,
   title: `${name} | ${role}`,
   description:
-    "Backend and AI engineer building typed Python services, serverless workflows, and agent integrations for banking and fintech teams.",
+    "Backend and AI engineer building typed Python services, serverless AWS platforms, and production LLM agents for banking and fintech teams.",
   email: "oscarbucio2001@gmail.com",
   github: "https://github.com/cactus-stack",
   linkedin: "https://www.linkedin.com/in/oscarbucio",
+  resume: "/OscarBucio_Resume.pdf",
+  location: "Mexico City, Mexico",
   url: resolveSiteUrl(),
   locale: "en_US",
-  lastModified: "2026-07-12",
+  lastModified: "2026-09-22",
 } as const;

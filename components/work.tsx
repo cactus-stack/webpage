@@ -7,47 +7,59 @@ import {
 const workCases = [
   {
     id: "plexus-bbva",
-    company: "Plexus Tech, BBVA project",
-    context: "Conversational banking integration",
-    title: "A typed agent boundary for banking.",
+    company: "Plexus Tech, client BBVA",
+    context: "Agent Blue, global core team",
+    title: "Tool modules for a global banking agent.",
     summary:
-      "Building a Python integration that connects OpenAI agents to banking services through typed tools and enterprise authentication.",
+      "Built production tool modules used across global and Mexico-specific agent workflows, plus the regional adaptation patterns that let Mexico adopt the global tools module instead of duplicating it.",
     stack: [
       "Python",
       "OpenAI Agents SDK",
       "Pydantic",
-      "AWS",
+      "Async service clients",
       "Enterprise auth",
+      "End-to-end tests",
     ],
-    variant: "banking",
+    visual: "banking",
+    layout: "copy-first",
+  },
+  {
+    id: "siatech-platform",
+    company: "Siatech",
+    context: "Serverless platform and LLM agent",
+    title: "A serverless platform at 60M requests a year.",
+    summary:
+      "Helped build and operate a serverless AWS platform for 12,000+ users, including an LLM-powered WhatsApp agent that handles 140,000+ webhooks a month. Cut cost per request 39% through MongoDB query, batching and caching work.",
+    stack: [
+      "Python",
+      "AWS Lambda",
+      "MongoDB",
+      "LLM agents",
+      "WhatsApp webhooks",
+      "GitHub Actions",
+    ],
+    visual: "platform",
+    layout: "visual-first",
   },
   {
     id: "fixat-rag",
     company: "FIXAT",
-    context: "Serverless financial RAG",
-    title: "Financial RAG on an event-driven backbone.",
+    context: "RAG conversational agent",
+    title: "Financial RAG, from prototype to production.",
     summary:
-      "Built a serverless financial RAG system with Amazon Bedrock and LangChain, supported by AWS orchestration and MongoDB.",
+      "Owned the design, implementation and production deployment of a RAG agent used by thousands of customers, improving lead-capture efficiency by up to 60%.",
     stack: [
       "Amazon Bedrock",
       "LangChain",
+      "OpenAI API",
       "AWS Lambda",
       "Step Functions",
       "SQS",
       "EventBridge",
       "MongoDB",
     ],
-    variant: "rag",
-  },
-  {
-    id: "hitss-claro-drive",
-    company: "Hitss México, Claro Drive",
-    context: "API quality",
-    title: "Repeatable API quality for Claro Drive.",
-    summary:
-      "Tested Claro Drive APIs with Postman suites and automated Python and JavaScript checks.",
-    stack: ["Postman", "Python", "JavaScript"],
-    variant: "quality",
+    visual: "rag",
+    layout: "stacked",
   },
 ] satisfies readonly WorkCase[];
 
@@ -68,8 +80,8 @@ export function Work() {
             Systems, shown in context.
           </h2>
           <p className="mt-6 max-w-[56ch] leading-relaxed text-pretty text-muted">
-            Banking integration, financial retrieval and API quality, with the
-            boundaries and tools that shaped each build.
+            Banking agents, a high-scale serverless platform and financial
+            retrieval, with the boundaries and results that shaped each build.
           </p>
         </div>
       </Reveal>

@@ -2,18 +2,18 @@ import { Reveal } from "@/components/reveal";
 
 const facts = [
   {
-    label: "Current focus",
-    value: "Conversational AI for banking",
-    detail: "Software Engineer at Plexus Tech, BBVA project.",
+    label: "Latest role",
+    value: "Agent tools for BBVA",
+    detail: "Full-Stack AI Engineer at Plexus Tech, on Agent Blue's global core team.",
   },
   {
-    label: "Experience",
-    value: "Backend to agent systems",
-    detail: "Fintech, API quality and process automation since 2022.",
+    label: "Production scale",
+    value: "60M+ API requests a year",
+    detail: "Serverless AWS platform for 12,000+ users, under 0.3% Lambda errors.",
   },
   {
     label: "Work status",
-    value: "U.S. work authorized",
+    value: "U.S. citizen",
     detail: "Based in Mexico City. No sponsorship required.",
   },
 ];

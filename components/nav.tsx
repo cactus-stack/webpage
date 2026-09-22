@@ -1,7 +1,13 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { GithubLogo, LinkedinLogo, List, X } from "@phosphor-icons/react";
+import {
+  ArrowUpRight,
+  GithubLogo,
+  LinkedinLogo,
+  List,
+  X,
+} from "@phosphor-icons/react";
 import { useEffect, useId, useRef, useState } from "react";
 import { NavLinks } from "@/components/nav-links";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -75,6 +81,16 @@ export function Nav() {
 
           <div className="ml-auto hidden min-w-0 items-center md:flex">
             <NavLinks />
+            <a
+              href={site.resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center gap-1 px-2.5 text-[13px] font-medium tracking-[-0.01em] text-muted transition-colors duration-200 hover:text-foreground lg:px-3"
+            >
+              Résumé
+              <span className="sr-only">, opens in a new tab</span>
+              <ArrowUpRight aria-hidden="true" size={13} />
+            </a>
             <span
               aria-hidden="true"
               className="mx-3 h-5 w-px shrink-0 bg-edge lg:mx-5"
@@ -167,6 +183,17 @@ export function Nav() {
               <div className="max-h-[calc(100dvh-4rem)] overflow-y-auto px-4 pt-2 pb-5">
                 <div className="mx-auto w-full max-w-[1380px]">
                   <NavLinks variant="mobile" onNavigate={closeMobileMenu} />
+                  <a
+                    href={site.resume}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => closeMobileMenu()}
+                    className="flex min-h-14 w-full items-center justify-between border-b border-edge py-2 text-base font-medium tracking-[-0.02em] text-foreground transition-colors duration-200 hover:text-accent active:text-accent"
+                  >
+                    Résumé
+                    <span className="sr-only">, opens in a new tab</span>
+                    <ArrowUpRight aria-hidden="true" size={16} className="mr-1 text-muted" />
+                  </a>
                   <div className="mt-3 flex items-center justify-between border-t border-edge pt-3">
                     <span className="text-sm text-muted">Profiles</span>
                     <div className="flex items-center">

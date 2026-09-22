@@ -47,7 +47,8 @@ Notes:
 
 ## Assets
 
-- `public/images/portrait.jpg` is the optimized hero portrait (EXIF stripped).
+- `public/images/portrait.webp` is the hero portrait; `public/images/portrait.jpg` is the same crop for the Open Graph card and structured data. Both are grayscale with metadata stripped (the source photo carries GPS data).
+- `public/OscarBucio_Resume.pdf` is the résumé linked from the nav, hero, contact list and footer. Replace the file to update it; keep the name.
 - `public/images/system-topology.webp` is the editorial systems visual used in the engineering-principles section.
 - Local source photography belongs in ignored `assets-src/`, never in `public/`.
 

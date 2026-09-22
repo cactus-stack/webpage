@@ -90,8 +90,8 @@ export function Hero() {
             className="mt-8 flex flex-col gap-3 min-[400px]:flex-row min-[400px]:flex-wrap"
           >
             <CtaLink href="#work">View work</CtaLink>
-            <CtaLink href={`mailto:${site.email}`} variant="ghost">
-              Email me
+            <CtaLink href={site.resume} variant="ghost" newTab>
+              Résumé
             </CtaLink>
           </motion.div>
         </motion.div>
@@ -113,12 +113,12 @@ export function Hero() {
         >
           <motion.div style={{ scale: imageScale }} className="absolute inset-0">
             <Image
-              src="/images/portrait.jpg"
-              alt="Portrait of Oscar Bucio"
+              src="/images/portrait.webp"
+              alt="Portrait of Oscar Bucio in a suit"
               fill
               priority
               sizes="(max-width: 767px) 100vw, 40vw"
-              className="object-cover object-[50%_38%] grayscale contrast-[1.04]"
+              className="object-cover object-[50%_10%] grayscale contrast-[1.04]"
             />
           </motion.div>
           <div

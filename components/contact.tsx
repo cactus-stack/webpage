@@ -1,6 +1,7 @@
 import {
   ArrowUpRight,
   EnvelopeSimple,
+  FileText,
   GithubLogo,
   LinkedinLogo,
 } from "@phosphor-icons/react/dist/ssr";
@@ -26,6 +27,12 @@ const channels = [
     value: site.email,
     href: `mailto:${site.email}`,
     Icon: EnvelopeSimple,
+  },
+  {
+    label: "Résumé",
+    value: "OscarBucio_Resume.pdf",
+    href: site.resume,
+    Icon: FileText,
   },
 ];
 

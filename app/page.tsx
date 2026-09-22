@@ -12,22 +12,30 @@ const profileJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
   url: site.url,
+  dateModified: site.lastModified,
   mainEntity: {
     "@type": "Person",
     name: site.name,
     jobTitle: site.role,
+    description: site.description,
     url: site.url,
     email: `mailto:${site.email}`,
     image: `${site.url}/images/portrait.jpg`,
     sameAs: [site.github, site.linkedin],
+    homeLocation: {
+      "@type": "Place",
+      name: site.location,
+    },
     alumniOf: {
       "@type": "CollegeOrUniversity",
       name: "Instituto Politécnico Nacional",
     },
     knowsAbout: [
       "Python backend engineering",
-      "AI agent integrations",
-      "Serverless architecture",
+      "LLM agents",
+      "Retrieval-augmented generation",
+      "AWS serverless architecture",
+      "MongoDB",
       "Financial technology",
     ],
   },
@@ -62,6 +70,15 @@ export default function Home() {
           <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-6 gap-y-3">
             <a className="transition-colors hover:text-foreground" href="#main">
               Back to top
+            </a>
+            <a
+              className="transition-colors hover:text-foreground"
+              href={site.resume}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Résumé
+              <span className="sr-only">, opens in a new tab</span>
             </a>
             <a
               className="transition-colors hover:text-foreground"

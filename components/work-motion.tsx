@@ -4,14 +4,13 @@ import {
   ArrowRight,
   Bank,
   BracketsCurly,
-  CheckCircle,
+  ChatCircleText,
   Cloud,
-  Code,
   Database,
   FlowArrow,
+  MapPin,
   Robot,
-  ShieldCheck,
-  TerminalWindow,
+  UserCheck,
   type Icon as PhosphorIcon,
 } from "@phosphor-icons/react";
 import {
@@ -34,7 +33,8 @@ export type WorkCase = {
   title: string;
   summary: string;
   stack: readonly string[];
-  variant: "banking" | "rag" | "quality";
+  visual: "banking" | "platform" | "rag";
+  layout: "copy-first" | "visual-first" | "stacked";
 };
 
 type WorkMotionProps = {
@@ -124,12 +124,13 @@ function WorkCard({
 
   const motionEnabled = armed && !reduce;
   const position = reduce ? "" : (stackPosition[index] ?? stackPosition.at(-1));
-  const copyOrder = workCase.variant === "rag" ? "lg:order-2" : "";
-  const visualOrder = workCase.variant === "rag" ? "lg:order-1" : "";
+  const visualFirst = workCase.layout === "visual-first";
+  const copyOrder = visualFirst ? "lg:order-2" : "";
+  const visualOrder = visualFirst ? "lg:order-1" : "";
   const layout =
-    workCase.variant === "quality"
+    workCase.layout === "stacked"
       ? "lg:grid-rows-[auto_1fr]"
-      : workCase.variant === "rag"
+      : visualFirst
         ? "lg:grid-cols-[1.16fr_0.84fr]"
         : "lg:grid-cols-[0.84fr_1.16fr]";
 
@@ -140,7 +141,11 @@ function WorkCard({
       className={`work-card relative mb-5 grid overflow-hidden rounded-[1.75rem] border border-edge bg-surface shadow-[0_30px_90px_rgb(27_48_82_/_0.11)] lg:mb-8 lg:min-h-[calc(100dvh-8.5rem)] ${reduce ? "" : "lg:sticky"} ${position} ${layout}`}
       style={motionEnabled ? { opacity, y, scale } : undefined}
     >
-      <CaseCopy workCase={workCase} className={copyOrder} />
+      <CaseCopy
+        workCase={workCase}
+        stacked={workCase.layout === "stacked"}
+        className={copyOrder}
+      />
       <div className={visualOrder}>
         <CaseVisual workCase={workCase} animate={motionEnabled} />
       </div>
@@ -150,14 +155,20 @@ function WorkCard({
 
 function CaseCopy({
   workCase,
+  stacked = false,
   className,
 }: {
   workCase: WorkCase;
+  stacked?: boolean;
   className?: string;
 }) {
+  // Stacked cards span the full width, so title and details sit side by side.
+  const direction = stacked
+    ? "lg:grid lg:grid-cols-2 lg:items-end lg:gap-12"
+    : "";
   return (
     <div
-      className={`flex flex-col justify-between p-6 sm:p-8 lg:p-10 xl:p-12 ${className ?? ""}`}
+      className={`flex flex-col justify-between p-6 sm:p-8 lg:p-10 xl:p-12 ${direction} ${className ?? ""}`}
     >
       <div>
         <p className="text-sm font-medium text-accent">{workCase.company}</p>
@@ -172,7 +183,7 @@ function CaseCopy({
         </h3>
       </div>
 
-      <div className="mt-10 lg:mt-16">
+      <div className={stacked ? "mt-10 lg:mt-0" : "mt-10 lg:mt-16"}>
         <p className="max-w-[48ch] leading-relaxed text-pretty text-muted">
           {workCase.summary}
         </p>
@@ -201,22 +212,22 @@ function CaseVisual({
   workCase: WorkCase;
   animate: boolean;
 }) {
-  if (workCase.variant === "banking") {
+  if (workCase.visual === "banking") {
     return <BankingVisual animate={animate} />;
   }
 
-  if (workCase.variant === "rag") {
-    return <RagVisual animate={animate} />;
+  if (workCase.visual === "platform") {
+    return <PlatformVisual animate={animate} />;
   }
 
-  return <QualityVisual animate={animate} />;
+  return <RagVisual animate={animate} />;
 }
 
 function BankingVisual({ animate }: { animate: boolean }) {
   return (
     <figure className="flex h-full min-h-[31rem] flex-col border-t border-edge bg-surface-strong/45 p-6 sm:p-8 lg:min-h-0 lg:border-t-0 lg:border-l lg:p-10 xl:p-12">
       <figcaption className="font-mono text-xs text-muted">
-        Typed banking integration
+        Global agent, regional tools
       </figcaption>
 
       <motion.ol
@@ -228,12 +239,6 @@ function BankingVisual({ animate }: { animate: boolean }) {
         viewport={{ once: true, amount: 0.35 }}
       >
         <FlowNode
-          icon={ShieldCheck}
-          label="Enterprise authentication"
-          detail="Access boundary"
-        />
-        <VerticalConnector />
-        <FlowNode
           icon={Robot}
           label="Agent orchestration"
           detail="OpenAI Agents SDK"
@@ -241,14 +246,20 @@ function BankingVisual({ animate }: { animate: boolean }) {
         <VerticalConnector />
         <FlowNode
           icon={BracketsCurly}
-          label="Typed Python tools"
-          detail="Pydantic contracts"
+          label="Global tools module"
+          detail="Typed Python, Pydantic contracts"
+        />
+        <VerticalConnector />
+        <FlowNode
+          icon={MapPin}
+          label="Regional adaptation"
+          detail="Mexico-specific workflows"
         />
         <VerticalConnector />
         <FlowNode
           icon={Bank}
           label="Banking services"
-          detail="Banking integration"
+          detail="Async service clients"
         />
       </motion.ol>
     </figure>
@@ -257,13 +268,13 @@ function BankingVisual({ animate }: { animate: boolean }) {
 
 function RagVisual({ animate }: { animate: boolean }) {
   return (
-    <figure className="flex h-full min-h-[34rem] flex-col border-t border-edge bg-surface-strong/45 p-6 sm:p-8 lg:min-h-0 lg:border-t-0 lg:border-r lg:p-10 xl:p-12">
+    <figure className="flex h-full flex-col border-t border-edge bg-surface-strong/45 p-6 sm:p-8 lg:p-10 xl:p-12">
       <figcaption className="font-mono text-xs text-muted">
         Retrieval and event orchestration
       </figcaption>
 
       <motion.div
-        className="my-auto grid gap-3 py-8 sm:grid-cols-2"
+        className="my-auto grid gap-3 py-8 sm:grid-cols-2 lg:grid-cols-4"
         variants={sequence}
         initial={false}
         animate={animate ? "hidden" : "show"}
@@ -308,56 +319,93 @@ function RagVisual({ animate }: { animate: boolean }) {
   );
 }
 
-function QualityVisual({ animate }: { animate: boolean }) {
+const platformStats = [
+  { value: "60M+", label: "API requests a year" },
+  { value: "12,000+", label: "Users served" },
+  { value: "<0.3%", label: "Lambda error rate" },
+  { value: "−39%", label: "Cost per request" },
+] as const;
+
+function PlatformVisual({ animate }: { animate: boolean }) {
   return (
-    <figure className="flex min-h-[22rem] flex-col border-t border-edge bg-surface-strong/45 p-6 sm:p-8 lg:min-h-[19rem] lg:p-10 xl:min-h-[21rem] xl:p-12">
+    <figure className="flex h-full min-h-[34rem] flex-col border-t border-edge bg-surface-strong/45 p-6 sm:p-8 lg:min-h-0 lg:border-t-0 lg:border-r lg:p-10 xl:p-12">
       <figcaption className="font-mono text-xs text-muted">
-        Claro Drive API verification
+        Production platform, in numbers
       </figcaption>
 
       <motion.div
-        className="my-auto grid items-center gap-6 py-8 md:grid-cols-[0.72fr_auto_1.28fr] md:gap-8"
+        className="my-auto py-8"
         variants={sequence}
         initial={false}
         animate={animate ? "hidden" : "show"}
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <DiagramBlock
-          icon={Cloud}
-          label="Claro Drive APIs"
-          detail="System under test"
-          featured
-        />
+        <dl className="grid grid-cols-2 gap-3">
+          {platformStats.map((stat) => (
+            <motion.div
+              key={stat.label}
+              variants={node}
+              className="rounded-xl border border-edge bg-background/65 p-4 sm:p-5"
+            >
+              <dt className="font-mono text-[0.72rem] leading-relaxed text-muted">
+                {stat.label}
+              </dt>
+              <dd className="mt-2 text-3xl font-medium tracking-[-0.04em] tabular-nums sm:text-4xl">
+                {stat.value}
+              </dd>
+            </motion.div>
+          ))}
+        </dl>
 
-        <motion.div
-          aria-hidden="true"
+        <motion.p
           variants={node}
-          className="flex justify-center text-accent"
+          className="mt-8 mb-3 font-mono text-xs text-muted"
         >
-          <ArrowRight
-            size={24}
-            weight="light"
-            className="rotate-90 md:rotate-0"
-          />
-        </motion.div>
-
-        <motion.div variants={node}>
-          <p className="mb-3 font-mono text-xs text-muted">
-            Verification layer
-          </p>
-          <div className="grid gap-3 sm:grid-cols-2">
-            <QualityNode
-              className="sm:col-span-2"
-              icon={TerminalWindow}
-              label="Postman suites"
-            />
-            <QualityNode icon={Code} label="Python checks" />
-            <QualityNode icon={CheckCircle} label="JavaScript checks" />
-          </div>
-        </motion.div>
+          WhatsApp LLM agent, monthly
+        </motion.p>
+        <motion.ol
+          variants={node}
+          className="grid items-center gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr]"
+        >
+          <PipelineStep icon={ChatCircleText} label="140K+ webhooks" />
+          <PipelineArrow />
+          <PipelineStep icon={Robot} label="30K+ LLM turns" />
+          <PipelineArrow />
+          <PipelineStep icon={UserCheck} label="1,000+ leads" />
+        </motion.ol>
+        <motion.p
+          variants={node}
+          className="mt-4 font-mono text-[0.72rem] leading-relaxed text-muted"
+        >
+          Over 90% processing success. CI/CD with GitHub Actions across 20+
+          services, backed by 7,000+ automated tests.
+        </motion.p>
       </motion.div>
     </figure>
+  );
+}
+
+function PipelineStep({
+  icon: Icon,
+  label,
+}: {
+  icon: PhosphorIcon;
+  label: string;
+}) {
+  return (
+    <li className="flex min-h-16 items-center gap-3 rounded-xl border border-edge bg-background/65 p-4">
+      <Icon size={20} weight="light" className="shrink-0 text-accent" aria-hidden />
+      <span className="text-sm font-medium">{label}</span>
+    </li>
+  );
+}
+
+function PipelineArrow() {
+  return (
+    <li aria-hidden="true" className="flex justify-center text-accent">
+      <ArrowRight size={20} weight="light" className="rotate-90 md:rotate-0" />
+    </li>
   );
 }
 
@@ -433,24 +481,5 @@ function DiagramBlock({
         {detail}
       </p>
     </motion.div>
-  );
-}
-
-function QualityNode({
-  icon: Icon,
-  label,
-  className,
-}: {
-  icon: PhosphorIcon;
-  label: string;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`flex min-h-20 items-center gap-3 rounded-xl border border-edge bg-background/65 p-4 ${className ?? ""}`}
-    >
-      <Icon size={20} weight="light" className="text-accent" aria-hidden />
-      <p className="text-sm font-medium">{label}</p>
-    </div>
   );
 }
