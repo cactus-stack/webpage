@@ -434,7 +434,7 @@ export function Architecture() {
                   {cores.map((core, index) => {
                     const approved = votes > index;
                     return (
-                      <g key={core.label}>
+                      <g key={core.label} data-cursor="" data-cursor-label={`Core · ${core.label}`}>
                         <polygon
                           points={hexPoints(1008, core.cy, 14)}
                           className={`transition-[fill,stroke] duration-300 ${
@@ -563,7 +563,7 @@ function Bus({ y, label, sub }: { y: number; label: string; sub: string }) {
 function DiagramBox({ node, active }: { node: DiagramNode; active: boolean }) {
   const tick = 7;
   return (
-    <g>
+    <g data-cursor="" data-cursor-label={`Node · ${node.label}`}>
       <rect
         x={node.x}
         y={node.y}

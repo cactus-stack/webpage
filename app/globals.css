@@ -111,6 +111,13 @@ body {
   outline-offset: 2px;
 }
 
+/* The HUD cursor draws its own pointer; the class is only set while it
+   is mounted, so touch, keyboard and reduced-motion users keep theirs. */
+html.hud-cursor,
+html.hud-cursor * {
+  cursor: none !important;
+}
+
 /* Anchored sections clear the fixed nav */
 section[id] {
   scroll-margin-top: 4.5rem;

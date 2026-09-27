@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { GeistMono } from "geist/font/mono";
 import { Inter, Inter_Tight } from "next/font/google";
+import { HudCursor } from "@/components/hud-cursor";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { site } from "@/lib/site";
 import "lenis/dist/lenis.css";
@@ -97,6 +98,7 @@ export default function RootLayout({
           className="grain pointer-events-none fixed inset-0 z-50 opacity-[0.028]"
         />
         <SmoothScroll />
+        <HudCursor />
         {children}
       </body>
     </html>
