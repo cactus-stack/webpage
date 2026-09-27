@@ -9,6 +9,7 @@ import {
   Database,
   FlowArrow,
   MapPin,
+  Queue,
   Robot,
   UserCheck,
   type Icon as PhosphorIcon,
@@ -304,7 +305,7 @@ function RagVisual({ animate }: { animate: boolean }) {
           detail="Step Functions"
         />
         <DiagramBlock
-          icon={ArrowRight}
+          icon={Queue}
           label="Messaging"
           detail="SQS"
         />
@@ -324,18 +325,12 @@ function RagVisual({ animate }: { animate: boolean }) {
   );
 }
 
-const platformStats = [
-  { value: "60M+", label: "API requests a year" },
-  { value: "12,000+", label: "Users served" },
-  { value: "<0.3%", label: "Lambda error rate" },
-  { value: "−39%", label: "Cost per request" },
-] as const;
 
 function PlatformVisual({ animate }: { animate: boolean }) {
   return (
     <figure className="flex h-full min-h-[34rem] flex-col border-t border-edge bg-surface-strong/45 p-6 sm:p-8 lg:min-h-0 lg:border-t-0 lg:border-r lg:p-10 xl:p-12">
       <figcaption className="font-mono text-xs text-muted">
-        Production platform, in numbers
+        WhatsApp LLM agent, monthly
       </figcaption>
 
       <motion.div
@@ -346,38 +341,16 @@ function PlatformVisual({ animate }: { animate: boolean }) {
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <dl className="grid grid-cols-2 gap-3">
-          {platformStats.map((stat) => (
-            <motion.div
-              key={stat.label}
-              variants={node}
-              className="border border-edge bg-background/65 p-4 sm:p-5"
-            >
-              <dt className="font-mono text-[0.72rem] leading-relaxed text-muted">
-                {stat.label}
-              </dt>
-              <dd className="mt-2 text-3xl font-medium tracking-[-0.04em] tabular-nums sm:text-4xl">
-                {stat.value}
-              </dd>
-            </motion.div>
-          ))}
-        </dl>
 
-        <motion.p
-          variants={node}
-          className="mt-8 mb-3 font-mono text-xs text-muted"
-        >
-          WhatsApp LLM agent, monthly
-        </motion.p>
         <motion.ol
           variants={node}
           className="grid items-center gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr]"
         >
-          <PipelineStep icon={ChatCircleText} label="140K+ webhooks" />
+          <PipelineStep icon={ChatCircleText} value="140K+" label="webhooks" />
           <PipelineArrow />
-          <PipelineStep icon={Robot} label="30K+ LLM turns" />
+          <PipelineStep icon={Robot} value="30K+" label="LLM turns" />
           <PipelineArrow />
-          <PipelineStep icon={UserCheck} label="1,000+ leads" />
+          <PipelineStep icon={UserCheck} value="1,000+" label="leads" />
         </motion.ol>
         <motion.p
           variants={node}
@@ -391,17 +364,24 @@ function PlatformVisual({ animate }: { animate: boolean }) {
   );
 }
 
+// One stage of the WhatsApp funnel. It is a real sequence (messages in,
+// model turns, qualified leads), so each stage carries its own figure.
 function PipelineStep({
   icon: Icon,
+  value,
   label,
 }: {
   icon: PhosphorIcon;
+  value: string;
   label: string;
 }) {
   return (
-    <li className="flex min-h-16 items-center gap-3 border border-edge bg-background/65 p-4">
-      <Icon size={20} weight="light" className="shrink-0 text-accent" aria-hidden />
-      <span className="text-sm font-medium">{label}</span>
+    <li className="flex flex-col gap-4 border border-edge bg-background/65 p-5">
+      <Icon size={20} weight="light" className="text-accent" aria-hidden />
+      <span>
+        <span className="title-card block text-4xl leading-none tabular-nums xl:text-5xl">{value}</span>
+        <span className="mt-2 block text-sm text-muted">{label}</span>
+      </span>
     </li>
   );
 }
@@ -428,9 +408,7 @@ function FlowNode({
       variants={node}
       className="flex items-center gap-4 border border-edge bg-background/70 p-4 sm:p-5"
     >
-      <span className="grid size-10 shrink-0 place-items-center border border-edge bg-surface text-accent">
-        <Icon size={20} weight="light" aria-hidden="true" />
-      </span>
+      <Icon size={22} weight="light" aria-hidden="true" className="shrink-0 text-accent" />
       <span>
         <span className="block text-sm font-medium text-foreground">
           {label}

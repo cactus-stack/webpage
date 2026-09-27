@@ -1,33 +1,3 @@
-import type { ReactNode } from "react";
-
-/**
- * A labelled hairline, read left to right like an instrument scale:
- * label, rule, trailing label and a status square.
- */
-export function HudRule({
-  left,
-  right,
-  className,
-  tone = "default",
-}: {
-  left: ReactNode;
-  right?: ReactNode;
-  className?: string;
-  tone?: "default" | "inverse";
-}) {
-  const rule = tone === "inverse" ? "bg-white/35" : "bg-edge-strong";
-  const square = tone === "inverse" ? "bg-white" : "bg-accent";
-
-  return (
-    <div className={`hud flex items-center gap-4 ${className ?? ""}`}>
-      <span className="shrink-0">{left}</span>
-      <span aria-hidden="true" className={`h-px min-w-6 flex-1 ${rule}`} />
-      {right && <span className="shrink-0">{right}</span>}
-      <span aria-hidden="true" className={`size-1.5 shrink-0 ${square}`} />
-    </div>
-  );
-}
-
 /** Corner brackets that frame a positioned parent like a targeting reticle. */
 export function Brackets({
   className = "border-edge-strong",

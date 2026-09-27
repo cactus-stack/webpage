@@ -3,7 +3,6 @@
 import { animate, useInView, useReducedMotion, type AnimationPlaybackControls } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { Brackets } from "@/components/hud";
-import { Reveal } from "@/components/reveal";
 import { TitleCard } from "@/components/title-card";
 
 type NodeId =
@@ -316,28 +315,25 @@ export function Architecture() {
           <TitleCard
             className="lg:col-span-8"
             id="architecture-title"
-            index="03"
-            label="Architecture"
-            meta="Reference system"
             lines={[
               { text: "Anatomy" },
               { text: "of a production", scale: 0.42, tone: "muted", light: true },
               { text: "agent" },
             ]}
           />
-          <Reveal className="lg:col-span-4" delay={0.1}>
+          <div className="lg:col-span-4">
             <p className="max-w-[46ch] leading-relaxed text-pretty text-muted">
               The architecture I build toward. Requests enter through an
               authenticated edge, an orchestrator works through typed tools,
               grounded retrieval and model calls, and nothing reaches a user
               until three independent checks agree.
             </p>
-          </Reveal>
+          </div>
         </div>
 
-        <Reveal className="mt-14 lg:mt-20">
+        <div className="mt-14 lg:mt-20">
           <figure>
-            <div ref={stageRef} className="relative border border-edge bg-background/70 p-2 backdrop-blur-[2px] sm:p-4">
+            <div ref={stageRef} className="relative border border-edge bg-background p-2 sm:p-4">
               <Brackets className="border-foreground/70" size="size-4" />
               <div className="hud flex items-center justify-between px-2 pt-1 pb-3 text-muted sm:px-3">
                 <span>
@@ -466,7 +462,7 @@ export function Architecture() {
                   />
                 </svg>
               </div>
-              <p className="hud px-2 pt-3 text-muted sm:hidden">Swipe to explore →</p>
+              <p className="hud px-2 pt-3 text-muted sm:hidden">Swipe to explore</p>
             </div>
 
             <figcaption className="hud mt-4 flex flex-wrap gap-x-7 gap-y-2 text-muted">
@@ -487,24 +483,22 @@ export function Architecture() {
               </span>
             </figcaption>
           </figure>
-        </Reveal>
+        </div>
 
         <div className="mt-16 grid gap-12 lg:grid-cols-12 lg:gap-10">
           <ol className="lg:col-span-7">
             {layers.map((layer, index) => (
-              <Reveal key={layer.title} delay={index * 0.05}>
-                <li className="grid grid-cols-[3rem_minmax(0,1fr)] gap-4 border-t border-edge py-5 sm:grid-cols-[3rem_12rem_minmax(0,1fr)]">
+              <li key={layer.title} className="grid grid-cols-[3rem_minmax(0,1fr)] gap-4 border-t border-edge py-5 sm:grid-cols-[3rem_12rem_minmax(0,1fr)]">
                   <span className="hud pt-1 text-accent-text">{String(index + 1).padStart(2, "0")}</span>
                   <h3 className="text-lg font-medium tracking-[-0.02em]">{layer.title}</h3>
                   <p className="col-start-2 text-sm leading-relaxed text-pretty text-muted sm:col-start-auto">
                     {layer.body}
                   </p>
                 </li>
-              </Reveal>
             ))}
           </ol>
 
-          <Reveal className="lg:col-span-5" delay={0.08}>
+          <div className="lg:col-span-5">
             <div aria-hidden="true" className="relative border border-edge-strong bg-surface">
               <div className="hud flex items-center justify-between border-b border-edge px-4 py-3 text-muted">
                 <span>
@@ -536,7 +530,7 @@ export function Architecture() {
                 </li>
               </ul>
             </div>
-          </Reveal>
+          </div>
         </div>
       </div>
     </section>

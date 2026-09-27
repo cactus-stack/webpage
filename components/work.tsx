@@ -1,4 +1,3 @@
-import { Reveal } from "@/components/reveal";
 import { TitleCard } from "@/components/title-card";
 import {
   WorkMotion,
@@ -76,21 +75,18 @@ export function Work() {
         <TitleCard
           className="lg:col-span-8"
           id="work-title"
-          index="04"
-          label="Selected work"
-          meta={`${workCases.length} cases`}
           lines={[
             { text: "Systems" },
             { text: "shown in", scale: 0.42, tone: "muted", light: true },
             { text: "context" },
           ]}
         />
-        <Reveal className="lg:col-span-4" delay={0.1}>
+        <div className="lg:col-span-4">
           <p className="max-w-[46ch] leading-relaxed text-pretty text-muted">
             Banking agents, a high-scale serverless platform and financial
             retrieval, with the boundaries and results that shaped each build.
           </p>
-        </Reveal>
+        </div>
       </div>
 
       <WorkMotion cases={workCases} />

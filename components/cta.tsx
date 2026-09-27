@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import type { ReactNode } from "react";
 
 type CtaLinkProps = {
@@ -23,8 +23,6 @@ export function CtaLink({
   variant = "primary",
   newTab = false,
 }: CtaLinkProps) {
-  const Arrow = newTab ? ArrowUpRight : ArrowRight;
-
   return (
     <a
       href={href}
@@ -33,12 +31,16 @@ export function CtaLink({
       className={`hud group inline-flex min-h-12 items-center justify-between gap-6 border px-5 whitespace-nowrap transition-[background-color,border-color,color,transform] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] active:translate-y-px ${shells[variant]}`}
     >
       {children}
-      {newTab && <span className="sr-only">, opens in a new tab</span>}
-      <Arrow
-        size={15}
-        aria-hidden
-        className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-      />
+      {newTab && (
+        <>
+          <span className="sr-only">, opens in a new tab</span>
+          <ArrowUpRight
+            size={15}
+            aria-hidden
+            className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          />
+        </>
+      )}
     </a>
   );
 }

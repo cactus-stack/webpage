@@ -1,13 +1,7 @@
 "use client";
 
-import {
-  animate,
-  useInView,
-  useMotionValueEvent,
-  useReducedMotion,
-  useScroll,
-} from "motion/react";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useMotionValueEvent, useScroll } from "motion/react";
+import { useEffect, useRef, useState } from "react";
 
 /** Local time in Mexico City, ticking every second. */
 export function LiveClock({ timeZone = "America/Mexico_City" }: { timeZone?: string }) {
@@ -57,63 +51,6 @@ export function ScrollPercent() {
   return (
     <span ref={ref} className="tabular-nums">
       000%
-    </span>
-  );
-}
-
-/**
- * Counts up to a number the first time it scrolls into view. The server
- * renders the final value, so the figure is correct without JavaScript
- * and for anything that reads the HTML.
- */
-export function CountUp({
-  value,
-  decimals = 0,
-  prefix = "",
-  suffix = "",
-  duration = 1.6,
-}: {
-  value: number;
-  decimals?: number;
-  prefix?: string;
-  suffix?: string;
-  duration?: number;
-}) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const reduce = useReducedMotion();
-  const inView = useInView(ref, { once: true, amount: 0.6 });
-  const [armed, setArmed] = useState(false);
-  const [display, setDisplay] = useState(value);
-
-  useLayoutEffect(() => {
-    if (reduce) return;
-    const element = ref.current;
-    if (element && element.getBoundingClientRect().top > window.innerHeight * 0.9) {
-      setArmed(true);
-      setDisplay(0);
-    }
-  }, [reduce]);
-
-  useEffect(() => {
-    if (!armed || !inView) return;
-    const controls = animate(0, value, {
-      duration,
-      ease: [0.16, 1, 0.3, 1],
-      onUpdate: setDisplay,
-    });
-    return () => controls.stop();
-  }, [armed, inView, value, duration]);
-
-  const formatted = display.toLocaleString("en-US", {
-    minimumFractionDigits: decimals,
-    maximumFractionDigits: decimals,
-  });
-
-  return (
-    <span ref={ref} className="tabular-nums">
-      {prefix}
-      {formatted}
-      {suffix}
     </span>
   );
 }

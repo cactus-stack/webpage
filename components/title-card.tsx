@@ -31,9 +31,6 @@ const sizes = {
 } as const;
 
 type TitleCardProps = {
-  index: string;
-  label: string;
-  meta?: ReactNode;
   lines: readonly TitleLine[];
   id?: string;
   level?: 1 | 2;
@@ -48,15 +45,12 @@ type TitleCardProps = {
 };
 
 /**
- * Section header in two registers: an instrument-style index rule, then a
- * condensed black serif title whose lines rise out of a mask. Content is
- * fully visible in the server HTML; the hidden state is only armed on the
- * client for titles that start below the fold.
+ * Section title whose lines rise out of a mask, stacked in mixed sizes the
+ * way broadcast title cards are. It carries no eyebrow: the heading says
+ * what the section is. Content is fully visible in the server HTML; the
+ * hidden state is only armed on the client for titles below the fold.
  */
 export function TitleCard({
-  index,
-  label,
-  meta,
   lines,
   id,
   level = 2,
@@ -84,21 +78,7 @@ export function TitleCard({
 
   return (
     <div ref={ref} className={`@container ${className ?? ""}`}>
-      <div className={`hud flex items-center gap-4 ${inverse ? "text-white/75" : "text-muted"}`}>
-        <span className={inverse ? "text-white" : "text-accent-text"}>{index}</span>
-        <span className="shrink-0">{label}</span>
-        <motion.span
-          aria-hidden="true"
-          className={`h-px min-w-6 flex-1 origin-left ${inverse ? "bg-white/35" : "bg-edge-strong"} ${intro ? "rule-draw" : ""}`}
-          initial={false}
-          animate={intro ? undefined : { scaleX: shown ? 1 : 0 }}
-          transition={{ duration: 1.2, ease }}
-        />
-        {meta && <span className="hidden shrink-0 sm:inline">{meta}</span>}
-        <span aria-hidden="true" className={`size-1.5 shrink-0 ${inverse ? "bg-white" : "bg-accent"}`} />
-      </div>
-
-      <Heading id={id} className={`title-card mt-6 sm:mt-8 ${sizes[size]}`}>
+      <Heading id={id} className={`title-card ${sizes[size]}`}>
         {lines.map((line, lineIndex) => {
           const item = typeof line === "string" ? { text: line } : line;
           const color =

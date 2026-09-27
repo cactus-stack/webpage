@@ -7,7 +7,6 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import { CtaLink } from "@/components/cta";
 import { CautionTape } from "@/components/hud";
-import { Reveal } from "@/components/reveal";
 import { TitleCard } from "@/components/title-card";
 import { site } from "@/lib/site";
 
@@ -55,9 +54,6 @@ export function Contact() {
         <div className="xl:col-span-8">
           <TitleCard
             id="contact-title"
-            index="07"
-            label="Contact"
-            meta="Open to roles"
             size="hero"
             lines={[
               { text: "Let’s build" },
@@ -70,7 +66,7 @@ export function Contact() {
               },
             ]}
           />
-          <Reveal delay={0.12}>
+          <div>
             <p className="mt-9 max-w-[45ch] text-lg leading-relaxed text-pretty text-muted">
               Open to backend and AI engineering roles with U.S. teams. U.S.
               citizen based in Mexico City, no sponsorship required.
@@ -78,13 +74,13 @@ export function Contact() {
             <div className="mt-9">
               <CtaLink href={`mailto:${site.email}`}>Email me</CtaLink>
             </div>
-          </Reveal>
+          </div>
         </div>
 
-        <Reveal className="xl:col-span-4 xl:pt-16" delay={0.08}>
+        <div className="xl:col-span-4 xl:pt-16">
           <p className="hud mb-4 text-muted">Channels</p>
           <ul aria-label="Contact channels" className="border-b border-edge">
-            {channels.map(({ label, value, href, Icon }, index) => {
+            {channels.map(({ label, value, href, Icon }) => {
               const opensNewTab = !href.startsWith("mailto:");
               return (
                 <li key={label} className="border-t border-edge">
@@ -92,9 +88,8 @@ export function Contact() {
                     href={href}
                     target={opensNewTab ? "_blank" : undefined}
                     rel={opensNewTab ? "noopener noreferrer" : undefined}
-                    className="group grid min-h-20 grid-cols-[2rem_2.5rem_minmax(0,1fr)_1.5rem] items-center gap-3 py-4 transition-[background-color,padding] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-surface hover:px-3"
+                    className="group grid min-h-20 grid-cols-[2.5rem_minmax(0,1fr)_1.5rem] items-center gap-3 py-4 transition-[background-color,padding] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-surface hover:px-3"
                   >
-                    <span className="hud text-muted">{String(index + 1).padStart(2, "0")}</span>
                     <Icon size={20} aria-hidden className="text-muted transition-colors duration-300 group-hover:text-accent" />
                     <span className="min-w-0">
                       <span className="hud block text-muted">{label}</span>
@@ -115,7 +110,7 @@ export function Contact() {
               );
             })}
           </ul>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

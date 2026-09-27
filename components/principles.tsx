@@ -1,4 +1,3 @@
-import { Reveal } from "@/components/reveal";
 import { TitleCard } from "@/components/title-card";
 
 const principles = [
@@ -29,27 +28,23 @@ export function Principles() {
         <TitleCard
           className="lg:col-span-8"
           id="protocols-title"
-          index="05"
-          label="Protocols"
-          meta="Operating rules"
           lines={[
             { text: "Engineering" },
             { text: "that holds under", scale: 0.42, tone: "muted", light: true },
             { text: "pressure" },
           ]}
         />
-        <Reveal className="lg:col-span-4" delay={0.1}>
+        <div className="lg:col-span-4">
           <p className="max-w-[46ch] leading-relaxed text-pretty text-muted">
             I keep AI systems grounded in explicit interfaces, controlled access
             and workflows that teams can operate.
           </p>
-        </Reveal>
+        </div>
       </div>
 
       <ol className="mt-16 border-b border-edge lg:mt-20">
         {principles.map((principle, index) => (
-          <Reveal key={principle.title} delay={index * 0.06}>
-            <li className="group grid gap-4 border-t border-edge py-8 transition-colors duration-300 hover:bg-surface sm:grid-cols-[8rem_minmax(0,1fr)] lg:grid-cols-[10rem_minmax(0,1.1fr)_minmax(0,1fr)_12rem] lg:items-baseline lg:gap-10 lg:py-10">
+          <li key={principle.title} className="group grid gap-4 border-t border-edge py-8 transition-colors duration-300 hover:bg-surface sm:grid-cols-[8rem_minmax(0,1fr)] lg:grid-cols-[10rem_minmax(0,1.1fr)_minmax(0,1fr)_12rem] lg:items-baseline lg:gap-10 lg:py-10">
               <span className="title-card text-6xl text-edge-strong transition-colors duration-300 group-hover:text-accent lg:pl-4 lg:text-7xl">
                 {String(index + 1).padStart(2, "0")}
               </span>
@@ -63,7 +58,6 @@ export function Principles() {
                 {principle.tag}
               </p>
             </li>
-          </Reveal>
         ))}
       </ol>
     </section>

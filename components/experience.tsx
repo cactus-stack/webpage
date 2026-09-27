@@ -1,5 +1,4 @@
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
-import { Reveal } from "@/components/reveal";
 import { TitleCard } from "@/components/title-card";
 import { site } from "@/lib/site";
 
@@ -47,16 +46,13 @@ export function Experience() {
           <TitleCard
             className="lg:col-span-8"
             id="about-title"
-            index="06"
-            label="Record"
-            meta="2022 — 2026"
             lines={[
               { text: "From automation" },
               { text: "to", scale: 0.42, tone: "muted", light: true },
               { text: "production AI" },
             ]}
           />
-          <Reveal className="lg:col-span-4" delay={0.1}>
+          <div className="lg:col-span-4">
             <p className="max-w-[40ch] leading-relaxed text-pretty text-muted">
               Each role moved closer to owning the services behind intelligent
               products.
@@ -71,13 +67,14 @@ export function Experience() {
               <span className="sr-only"> on LinkedIn, opens in a new tab</span>
               <ArrowUpRight size={15} aria-hidden />
             </a>
-          </Reveal>
+          </div>
         </div>
 
         <ol className="mt-16 border-b border-edge lg:mt-20">
           {roles.map((role, index) => (
-            <Reveal key={`${role.company}-${role.period}`} delay={index * 0.055}>
-              <li className="group grid gap-3 border-t border-edge py-7 transition-colors duration-300 hover:bg-background/60 sm:grid-cols-[12rem_minmax(0,1fr)] lg:grid-cols-[14rem_minmax(0,1.2fr)_minmax(0,1fr)_6rem] lg:items-baseline lg:gap-10 lg:py-9">
+              <li
+                key={`${role.company}-${role.period}`}
+                className="group grid gap-3 border-t border-edge py-7 transition-colors duration-300 hover:bg-background/60 sm:grid-cols-[12rem_minmax(0,1fr)] lg:grid-cols-[14rem_minmax(0,1.2fr)_minmax(0,1fr)_6rem] lg:items-baseline lg:gap-10 lg:py-9">
                 <p className="hud text-muted lg:pl-4">{role.period}</p>
                 <div>
                   <p className="hud text-accent-text">{role.company}</p>
@@ -94,15 +91,14 @@ export function Experience() {
                   R-{String(roles.length - index).padStart(2, "0")}
                 </p>
               </li>
-            </Reveal>
           ))}
         </ol>
 
-        <Reveal className="mt-8">
+        <div className="mt-8">
           <p className="hud text-muted">
             B.S. Computer Systems Engineering · Instituto Politécnico Nacional (ESCOM) · 2025
           </p>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

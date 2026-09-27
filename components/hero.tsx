@@ -15,6 +15,7 @@ const readouts = [
   { label: "Status", value: "Open to roles", live: true },
   { label: "Work auth", value: "U.S. citizen · No sponsorship" },
   { label: "Latest", value: "Agent tools for BBVA" },
+  { label: "Revision", value: "Rev. 2026.09" },
 ] as const;
 
 export function Hero() {
@@ -45,9 +46,6 @@ export function Hero() {
               intro
               level={1}
               size="hero"
-              index="01"
-              label="Backend & AI engineering"
-              meta="Rev. 2026.09"
               lines={[
                 { text: "Backends" },
                 { text: "for production", scale: 0.42, tone: "muted", light: true },
