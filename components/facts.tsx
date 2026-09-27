@@ -67,14 +67,19 @@ export function Facts() {
               <Reveal
                 key={metric.label}
                 delay={index * 0.07}
-                className="border-t border-white/25 py-8 sm:odd:pr-8 sm:even:border-l sm:even:pl-8 lg:border-t-0 lg:border-l lg:px-8 lg:py-2 lg:first:border-l-0 lg:first:pl-0 lg:odd:pr-8"
+                className="group @container border-t border-white/25 py-8 sm:even:border-l lg:border-t-0 lg:border-l lg:py-2 lg:first:border-l-0"
               >
-                <dt className="hud flex items-center gap-3 text-white/75">
+                {/* Horizontal padding lives on dt/dd, not on the column, so the
+                    column's container width (and so the figure size) is the
+                    same for all four. */}
+                <dt className="hud flex items-center gap-3 text-white/75 sm:group-odd:pr-8 sm:group-even:pl-8 lg:px-8 lg:group-first:pl-0 lg:group-odd:pr-8">
                   <span className="text-white">{String(index + 1).padStart(2, "0")}</span>
                   {metric.label}
                 </dt>
-                <dd className="mt-5">
-                  <span className="title-card block text-[clamp(3.4rem,5.4vw,5.9rem)] leading-[0.86]">
+                <dd className="mt-5 sm:group-odd:pr-8 sm:group-even:pl-8 lg:px-8 lg:group-first:pl-0 lg:group-odd:pr-8">
+                  {/* At 21cqi of the column the widest figure, "12,000+"
+                      (3.41em), fits inside the padding from 1024px up. */}
+                  <span className="title-card block text-[clamp(2.75rem,21cqi,5.9rem)] leading-[0.86]">
                     <CountUp
                       value={metric.value}
                       prefix={"prefix" in metric ? metric.prefix : ""}

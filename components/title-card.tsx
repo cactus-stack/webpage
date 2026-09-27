@@ -19,10 +19,15 @@ export type TitleLine =
       after?: ReactNode;
     };
 
+// Sizes are relative to the title's own column (cqi), not the viewport,
+// so a word never outgrows its column once the page reaches max width.
+// Ratios come from measured Inter Tight widths: the widest one-line hero
+// title ("LET'S BUILD", 5.06em) fills ~96% of the column at 19cqi, and the
+// widest one-line section title ("PRODUCTION AI", 6.83em) ~96% at 14cqi.
 const sizes = {
-  hero: "text-[clamp(3.9rem,11.4vw,12.25rem)]",
-  section: "text-[clamp(2.75rem,8vw,8.25rem)]",
-  compact: "text-[clamp(2.4rem,5.6vw,5.75rem)]",
+  hero: "text-[clamp(3.4rem,19cqi,12.25rem)]",
+  section: "text-[clamp(2.75rem,14cqi,8.25rem)]",
+  compact: "text-[clamp(2.4rem,10cqi,5.75rem)]",
 } as const;
 
 type TitleCardProps = {
@@ -78,7 +83,7 @@ export function TitleCard({
   const inverse = tone === "inverse";
 
   return (
-    <div ref={ref} className={className}>
+    <div ref={ref} className={`@container ${className ?? ""}`}>
       <div className={`hud flex items-center gap-4 ${inverse ? "text-white/75" : "text-muted"}`}>
         <span className={inverse ? "text-white" : "text-accent-text"}>{index}</span>
         <span className="shrink-0">{label}</span>
