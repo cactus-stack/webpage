@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/reveal";
+import { TitleCard } from "@/components/title-card";
 import {
   WorkMotion,
   type WorkCase,
@@ -71,20 +72,26 @@ export function Work() {
       tabIndex={-1}
       className="mx-auto max-w-[1380px] px-5 py-28 focus:outline-none sm:px-8 lg:px-10 lg:py-44"
     >
-      <Reveal>
-        <div className="max-w-3xl">
-          <h2
-            id="work-title"
-            className="max-w-[12ch] text-4xl leading-[0.96] font-medium tracking-[-0.052em] text-balance md:text-6xl"
-          >
-            Systems, shown in context.
-          </h2>
-          <p className="mt-6 max-w-[56ch] leading-relaxed text-pretty text-muted">
+      <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
+        <TitleCard
+          className="lg:col-span-8"
+          id="work-title"
+          index="04"
+          label="Selected work"
+          meta={`${workCases.length} cases`}
+          lines={[
+            { text: "Systems" },
+            { text: "shown in", scale: 0.42, tone: "muted", light: true },
+            { text: "context" },
+          ]}
+        />
+        <Reveal className="lg:col-span-4" delay={0.1}>
+          <p className="max-w-[46ch] leading-relaxed text-pretty text-muted">
             Banking agents, a high-scale serverless platform and financial
             retrieval, with the boundaries and results that shaped each build.
           </p>
-        </div>
-      </Reveal>
+        </Reveal>
+      </div>
 
       <WorkMotion cases={workCases} />
     </section>

@@ -138,11 +138,12 @@ function WorkCard({
     <motion.article
       ref={ref}
       aria-labelledby={`${workCase.id}-title`}
-      className={`work-card relative mb-5 grid overflow-hidden rounded-[1.75rem] border border-edge bg-surface shadow-[0_30px_90px_rgb(27_48_82_/_0.11)] lg:mb-8 lg:min-h-[calc(100dvh-8.5rem)] ${reduce ? "" : "lg:sticky"} ${position} ${layout}`}
+      className={`work-card relative mb-5 grid overflow-hidden border border-edge-strong bg-surface shadow-[0_30px_90px_rgb(3_8_20/0.18)] lg:mb-8 lg:min-h-[calc(100dvh-8.5rem)] ${reduce ? "" : "lg:sticky"} ${position} ${layout}`}
       style={motionEnabled ? { opacity, y, scale } : undefined}
     >
       <CaseCopy
         workCase={workCase}
+        index={index}
         stacked={workCase.layout === "stacked"}
         className={copyOrder}
       />
@@ -155,10 +156,12 @@ function WorkCard({
 
 function CaseCopy({
   workCase,
+  index,
   stacked = false,
   className,
 }: {
   workCase: WorkCase;
+  index: number;
   stacked?: boolean;
   className?: string;
 }) {
@@ -171,10 +174,12 @@ function CaseCopy({
       className={`flex flex-col justify-between p-6 sm:p-8 lg:p-10 xl:p-12 ${direction} ${className ?? ""}`}
     >
       <div>
-        <p className="text-sm font-medium text-accent">{workCase.company}</p>
-        <p className="mt-2 font-mono text-xs leading-relaxed text-muted">
+        <p className="hud flex items-center gap-3 text-muted">
+          <span className="text-accent-text">Case {String(index + 1).padStart(2, "0")}</span>
+          <span aria-hidden="true" className="h-px w-8 bg-edge-strong" />
           {workCase.context}
         </p>
+        <p className="mt-5 text-sm font-medium text-foreground">{workCase.company}</p>
         <h3
           id={`${workCase.id}-title`}
           className="mt-6 max-w-[15ch] text-3xl leading-[1.02] font-medium tracking-[-0.04em] text-balance sm:text-4xl lg:text-[2.7rem]"
@@ -346,7 +351,7 @@ function PlatformVisual({ animate }: { animate: boolean }) {
             <motion.div
               key={stat.label}
               variants={node}
-              className="rounded-xl border border-edge bg-background/65 p-4 sm:p-5"
+              className="border border-edge bg-background/65 p-4 sm:p-5"
             >
               <dt className="font-mono text-[0.72rem] leading-relaxed text-muted">
                 {stat.label}
@@ -394,7 +399,7 @@ function PipelineStep({
   label: string;
 }) {
   return (
-    <li className="flex min-h-16 items-center gap-3 rounded-xl border border-edge bg-background/65 p-4">
+    <li className="flex min-h-16 items-center gap-3 border border-edge bg-background/65 p-4">
       <Icon size={20} weight="light" className="shrink-0 text-accent" aria-hidden />
       <span className="text-sm font-medium">{label}</span>
     </li>
@@ -421,9 +426,9 @@ function FlowNode({
   return (
     <motion.li
       variants={node}
-      className="flex items-center gap-4 rounded-xl border border-edge bg-background/70 p-4 sm:p-5"
+      className="flex items-center gap-4 border border-edge bg-background/70 p-4 sm:p-5"
     >
-      <span className="grid size-10 shrink-0 place-items-center rounded-lg border border-edge bg-surface text-accent">
+      <span className="grid size-10 shrink-0 place-items-center border border-edge bg-surface text-accent">
         <Icon size={20} weight="light" aria-hidden="true" />
       </span>
       <span>
@@ -464,7 +469,7 @@ function DiagramBlock({
   return (
     <motion.div
       variants={node}
-      className={`rounded-xl border p-4 sm:p-5 ${
+      className={`border p-4 sm:p-5 ${
         featured
           ? "border-accent/45 bg-accent/10"
           : "border-edge bg-background/65"

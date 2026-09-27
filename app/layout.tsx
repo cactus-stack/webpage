@@ -1,8 +1,24 @@
 import type { Metadata, Viewport } from "next";
-import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import { Inter, Inter_Tight } from "next/font/google";
+import { SmoothScroll } from "@/components/smooth-scroll";
 import { site } from "@/lib/site";
+import "lenis/dist/lenis.css";
 import "./globals.css";
+
+// Inter for running text; Inter Tight, the cut drawn for large sizes, for
+// title cards and big figures. Geist Mono stays on every HUD label.
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const interTight = Inter_Tight({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter-tight",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -53,8 +69,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f1f3f4" },
-    { media: "(prefers-color-scheme: dark)", color: "#080a0d" },
+    { media: "(prefers-color-scheme: light)", color: "#f2f3f5" },
+    { media: "(prefers-color-scheme: dark)", color: "#06080c" },
   ],
 };
 
@@ -67,7 +83,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${GeistSans.variable} ${GeistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${interTight.variable} ${GeistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <script
@@ -80,6 +96,7 @@ export default function RootLayout({
           aria-hidden
           className="grain pointer-events-none fixed inset-0 z-50 opacity-[0.028]"
         />
+        <SmoothScroll />
         {children}
       </body>
     </html>

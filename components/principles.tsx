@@ -1,70 +1,71 @@
-import Image from "next/image";
 import { Reveal } from "@/components/reveal";
+import { TitleCard } from "@/components/title-card";
 
 const principles = [
   {
     title: "Contracts before cleverness",
     body: "Typed boundaries keep business rules, agent tools and infrastructure understandable as the system grows.",
+    tag: "Pydantic · typed Python",
   },
   {
     title: "Agents use explicit tools",
     body: "Models can reason, but production services still own policy, validation, authentication and data access.",
+    tag: "Tool contracts · auth",
   },
   {
     title: "Operability is part of design",
     body: "Clear failure paths, observable workflows and testable components matter before a feature reaches production.",
+    tag: "Traces · evals · tests",
   },
-];
+] as const;
 
 export function Principles() {
   return (
-    <section className="mx-auto max-w-[1380px] px-5 py-28 sm:px-8 lg:px-10 lg:py-44">
-      <Reveal>
-        <h2 className="max-w-[13ch] text-4xl leading-[0.96] font-medium tracking-[-0.052em] text-balance sm:text-5xl lg:text-6xl">
-          Engineering that stays understandable under pressure.
-        </h2>
-        <p className="mt-6 max-w-[55ch] text-base leading-relaxed text-pretty text-muted sm:text-lg">
-          I keep AI systems grounded in explicit interfaces, controlled access and
-          workflows that teams can operate.
-        </p>
-      </Reveal>
-
-      <div className="mt-16 grid items-start gap-12 lg:grid-cols-12 lg:gap-10">
-        <Reveal className="lg:col-span-7">
-          <figure className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] border border-edge bg-surface shadow-[0_24px_80px_rgb(27_48_82_/_0.1)]">
-            <Image
-              src="/images/system-topology.webp"
-              alt="Architectural layers connected by controlled blue signal paths"
-              fill
-              sizes="(max-width: 1024px) 100vw, 58vw"
-              className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.025]"
-            />
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 rounded-[inherit] ring-1 ring-white/15 ring-inset"
-            />
-          </figure>
+    <section
+      aria-labelledby="protocols-title"
+      className="mx-auto max-w-[1380px] px-5 py-28 sm:px-8 lg:px-10 lg:py-40"
+    >
+      <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
+        <TitleCard
+          className="lg:col-span-8"
+          id="protocols-title"
+          index="05"
+          label="Protocols"
+          meta="Operating rules"
+          lines={[
+            { text: "Engineering" },
+            { text: "that holds under", scale: 0.42, tone: "muted", light: true },
+            { text: "pressure" },
+          ]}
+        />
+        <Reveal className="lg:col-span-4" delay={0.1}>
+          <p className="max-w-[46ch] leading-relaxed text-pretty text-muted">
+            I keep AI systems grounded in explicit interfaces, controlled access
+            and workflows that teams can operate.
+          </p>
         </Reveal>
-
-        <div className="lg:col-span-5 lg:pt-10">
-          {principles.map((principle, index) => (
-            <Reveal
-              key={principle.title}
-              delay={index * 0.07}
-              className="border-t border-edge py-7 first:pt-0 first:border-t-0 lg:first:border-t lg:first:pt-7"
-            >
-              <article>
-                <h3 className="text-xl font-medium tracking-[-0.035em] sm:text-2xl">
-                  {principle.title}
-                </h3>
-                <p className="mt-3 max-w-[48ch] text-sm leading-relaxed text-pretty text-muted sm:text-base">
-                  {principle.body}
-                </p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
       </div>
+
+      <ol className="mt-16 border-b border-edge lg:mt-20">
+        {principles.map((principle, index) => (
+          <Reveal key={principle.title} delay={index * 0.06}>
+            <li className="group grid gap-4 border-t border-edge py-8 transition-colors duration-300 hover:bg-surface sm:grid-cols-[8rem_minmax(0,1fr)] lg:grid-cols-[10rem_minmax(0,1.1fr)_minmax(0,1fr)_12rem] lg:items-baseline lg:gap-10 lg:py-10">
+              <span className="title-card text-6xl text-edge-strong transition-colors duration-300 group-hover:text-accent lg:pl-4 lg:text-7xl">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 className="text-2xl font-medium tracking-[-0.035em] text-balance sm:text-3xl">
+                {principle.title}
+              </h3>
+              <p className="max-w-[48ch] text-sm leading-relaxed text-pretty text-muted sm:col-start-2 sm:text-base lg:col-start-auto">
+                {principle.body}
+              </p>
+              <p className="hud text-muted sm:col-start-2 lg:col-start-auto lg:pr-4 lg:text-right">
+                {principle.tag}
+              </p>
+            </li>
+          </Reveal>
+        ))}
+      </ol>
     </section>
   );
 }

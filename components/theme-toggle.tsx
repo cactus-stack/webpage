@@ -247,7 +247,7 @@ export function ThemeToggle() {
               duration: reduceMotion ? 0 : 0.2,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="absolute top-[calc(100%+0.5rem)] right-0 z-50 w-40 origin-top-right rounded-xl border border-edge/90 bg-[var(--nav)] p-1.5 shadow-[0_16px_44px_rgb(0_0_0/0.16)] backdrop-blur-xl"
+            className="absolute top-[calc(100%+0.5rem)] right-0 z-50 w-40 origin-top-right border border-edge-strong bg-[var(--nav)] p-1 shadow-[0_16px_44px_rgb(3_8_20/0.22)] backdrop-blur-xl"
           >
             {themeOptions.map(({ value, label, Icon }) => {
               const selected = preference === value;
@@ -262,7 +262,7 @@ export function ThemeToggle() {
                   tabIndex={focusedOption === value ? 0 : -1}
                   onFocus={() => setFocusedOption(value)}
                   onClick={() => selectPreference(value)}
-                  className={`group flex min-h-10 w-full items-center gap-3 rounded-lg px-3 text-left text-sm transition-[color,background-color,transform] duration-200 active:scale-[0.98] ${
+                  className={`hud group flex min-h-10 w-full items-center gap-3 px-3 text-left transition-[color,background-color,transform] duration-200 active:scale-[0.98] ${
                     selected
                       ? "bg-surface text-foreground"
                       : "text-muted hover:bg-surface/70 hover:text-foreground"
@@ -272,7 +272,7 @@ export function ThemeToggle() {
                   <span className="flex-1">{label}</span>
                   <span
                     aria-hidden="true"
-                    className={`size-1.5 rounded-full bg-accent transition-transform duration-200 ${
+                    className={`size-1.5 bg-accent transition-transform duration-200 ${
                       selected ? "scale-100" : "scale-0"
                     }`}
                   />

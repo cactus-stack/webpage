@@ -59,5 +59,5 @@ export const site = {
   location: "Mexico City, Mexico",
   url: resolveSiteUrl(),
   locale: "en_US",
-  lastModified: "2026-09-22",
+  lastModified: "2026-09-27",
 } as const;

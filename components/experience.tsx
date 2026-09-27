@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "@/components/reveal";
+import { TitleCard } from "@/components/title-card";
 import { site } from "@/lib/site";
 
 const roles = [
@@ -41,16 +42,22 @@ export function Experience() {
       tabIndex={-1}
       className="border-y border-edge bg-surface focus:outline-none"
     >
-      <div className="mx-auto grid max-w-[1380px] gap-14 px-5 py-28 sm:px-8 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:py-40">
-        <div className="lg:sticky lg:top-28 lg:col-span-4 lg:self-start">
-          <Reveal>
-            <h2
-              id="about-title"
-              className="max-w-[10ch] text-4xl leading-[0.96] font-medium tracking-[-0.052em] text-balance sm:text-5xl"
-            >
-              From automation to production AI.
-            </h2>
-            <p className="mt-6 max-w-[38ch] leading-relaxed text-pretty text-muted">
+      <div className="mx-auto max-w-[1380px] px-5 py-28 sm:px-8 lg:px-10 lg:py-40">
+        <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
+          <TitleCard
+            className="lg:col-span-8"
+            id="about-title"
+            index="06"
+            label="Record"
+            meta="2022 — 2026"
+            lines={[
+              { text: "From automation" },
+              { text: "to", scale: 0.42, tone: "muted", light: true },
+              { text: "production AI" },
+            ]}
+          />
+          <Reveal className="lg:col-span-4" delay={0.1}>
+            <p className="max-w-[40ch] leading-relaxed text-pretty text-muted">
               Each role moved closer to owning the services behind intelligent
               products.
             </p>
@@ -58,46 +65,44 @@ export function Experience() {
               href={site.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-7 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-accent transition-colors duration-300 hover:text-foreground"
+              className="hud mt-6 inline-flex min-h-11 items-center gap-2 text-accent-text transition-colors duration-300 hover:text-foreground"
             >
               Full history
               <span className="sr-only"> on LinkedIn, opens in a new tab</span>
-              <ArrowUpRight size={16} aria-hidden />
+              <ArrowUpRight size={15} aria-hidden />
             </a>
           </Reveal>
         </div>
 
-        <div className="lg:col-span-7 lg:col-start-6">
+        <ol className="mt-16 border-b border-edge lg:mt-20">
           {roles.map((role, index) => (
-            <Reveal
-              key={`${role.company}-${role.period}`}
-              delay={index * 0.055}
-              className="border-t border-edge py-8 first:pt-8 last:pb-0"
-            >
-              <article className="group grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-x-8">
+            <Reveal key={`${role.company}-${role.period}`} delay={index * 0.055}>
+              <li className="group grid gap-3 border-t border-edge py-7 transition-colors duration-300 hover:bg-background/60 sm:grid-cols-[12rem_minmax(0,1fr)] lg:grid-cols-[14rem_minmax(0,1.2fr)_minmax(0,1fr)_6rem] lg:items-baseline lg:gap-10 lg:py-9">
+                <p className="hud text-muted lg:pl-4">{role.period}</p>
                 <div>
-                  <p className="text-sm font-medium text-accent">{role.company}</p>
-                  <h3 className="mt-3 text-2xl font-medium tracking-[-0.035em] transition-colors duration-300 group-hover:text-accent sm:text-3xl">
+                  <p className="hud text-accent-text">{role.company}</p>
+                  <h3 className="mt-3 text-2xl font-medium tracking-[-0.035em] transition-colors duration-300 group-hover:text-accent-text sm:text-3xl">
                     {role.focus}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted">
-                    {role.role}, {role.location}
-                  </p>
                 </div>
-                <p className="font-mono text-xs tracking-[0.05em] text-muted tabular-nums sm:pt-1">
-                  {role.period}
+                <p className="text-sm leading-relaxed text-muted sm:col-start-2 lg:col-start-auto">
+                  {role.role}
+                  <br />
+                  {role.location}
                 </p>
-              </article>
+                <p aria-hidden="true" className="hud hidden text-right text-edge-strong lg:block lg:pr-4">
+                  R-{String(roles.length - index).padStart(2, "0")}
+                </p>
+              </li>
             </Reveal>
           ))}
+        </ol>
 
-          <Reveal className="mt-12 border-t border-edge pt-7">
-            <p className="text-sm leading-relaxed text-muted">
-              B.S. in Computer Systems Engineering, Instituto Politécnico
-              Nacional (ESCOM), 2025.
-            </p>
-          </Reveal>
-        </div>
+        <Reveal className="mt-8">
+          <p className="hud text-muted">
+            B.S. Computer Systems Engineering · Instituto Politécnico Nacional (ESCOM) · 2025
+          </p>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,135 +1,157 @@
 "use client";
 
 import Image from "next/image";
-import {
-  motion,
-  useMotionValue,
-  useReducedMotion,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "motion/react";
-import { useRef, type PointerEvent } from "react";
+import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
 import { CtaLink } from "@/components/cta";
+import { Brackets } from "@/components/hud";
+import { LiveClock, ScrollPercent } from "@/components/hud-live";
+import { TitleCard } from "@/components/title-card";
 import { site } from "@/lib/site";
 
-const EASE = [0.16, 1, 0.3, 1] as const;
+const scale = ["Agents", "RAG", "Typed tools", "Serverless", "Evals", "Observability"] as const;
+
+const readouts = [
+  { label: "Status", value: "Open to roles", live: true },
+  { label: "Work auth", value: "U.S. citizen · No sponsorship" },
+  { label: "Latest", value: "Agent tools for BBVA" },
+] as const;
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
-  const portraitRef = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
-  const pointerX = useMotionValue(0);
-  const pointerY = useMotionValue(0);
-  const rotateX = useSpring(pointerY, { stiffness: 120, damping: 22 });
-  const rotateY = useSpring(pointerX, { stiffness: 120, damping: 22 });
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
   });
-  const copyY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -42]);
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 86]);
-  const imageScale = useTransform(scrollYProgress, [0, 1], [1, reduce ? 1 : 1.055]);
-
-  const rise = (delay: number) => ({
-    initial: reduce ? false : ({ y: 28 } as const),
-    animate: { y: 0 },
-    transition: { duration: 0.82, delay, ease: EASE },
-  });
-
-  const handlePointerMove = (event: PointerEvent<HTMLElement>) => {
-    if (reduce || event.pointerType === "touch" || !portraitRef.current) return;
-    const bounds = portraitRef.current.getBoundingClientRect();
-    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-    pointerX.set(x * 3.2);
-    pointerY.set(y * -3.2);
-  };
-
-  const resetPointer = () => {
-    pointerX.set(0);
-    pointerY.set(0);
-  };
+  const copyY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -60]);
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 90]);
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1, reduce ? 1 : 1.08]);
 
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[100dvh] overflow-hidden border-b border-edge"
+      className="relative overflow-hidden border-b border-edge"
     >
-      <div aria-hidden className="absolute inset-x-0 bottom-0 h-[24%] bg-surface" />
       <div
         aria-hidden
-        className="absolute top-[18%] -left-[14rem] h-[28rem] w-[28rem] rounded-full border border-accent/15 opacity-70"
+        className="hex-field pointer-events-none absolute inset-y-0 right-0 w-[62%] text-hex-line [--hex-fade:radial-gradient(80%_75%_at_75%_45%,black_35%,transparent)]"
       />
-      <div className="relative mx-auto grid min-h-[100dvh] max-w-[1380px] items-center gap-9 px-5 pt-24 pb-8 sm:px-8 md:grid-cols-12 md:gap-8 lg:gap-14 lg:px-10">
-        <motion.div
-          style={{ y: copyY }}
-          className="relative z-10 md:col-span-7 md:pr-4 lg:pr-7"
-        >
-          <motion.p
-            {...rise(0)}
-            className="font-mono text-xs font-medium tracking-[0.12em] text-accent uppercase"
-          >
-            {site.name} / Backend &amp; AI Engineer
-          </motion.p>
-          <motion.h1
-            {...rise(0.08)}
-            className="mt-5 max-w-[8.6ch] text-[clamp(3.4rem,7.5vw,7.35rem)] leading-[0.88] font-medium tracking-[-0.076em] text-balance"
-          >
-            Backends for production AI.
-          </motion.h1>
-          <motion.p
-            {...rise(0.18)}
-            className="mt-7 max-w-[50ch] text-base leading-relaxed text-pretty text-muted sm:text-lg"
-          >
-            I design typed services, agent tools and cloud workflows that move AI
-            from demos into regulated products.
-          </motion.p>
-          <motion.div
-            {...rise(0.28)}
-            className="mt-8 flex flex-col gap-3 min-[400px]:flex-row min-[400px]:flex-wrap"
-          >
-            <CtaLink href="#work">View work</CtaLink>
-            <CtaLink href={site.resume} variant="ghost" newTab>
-              Résumé
-            </CtaLink>
-          </motion.div>
-        </motion.div>
 
-        <motion.figure
-          ref={portraitRef}
-          initial={reduce ? false : { scale: 0.965, y: 28 }}
-          animate={{ scale: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.12, ease: EASE }}
-          onPointerMove={handlePointerMove}
-          onPointerLeave={resetPointer}
-          style={{
-            y: imageY,
-            rotateX: reduce ? 0 : rotateX,
-            rotateY: reduce ? 0 : rotateY,
-            transformPerspective: 1100,
-          }}
-          className="relative h-[34dvh] min-h-60 w-full overflow-hidden rounded-[1.75rem] border border-edge bg-surface shadow-[0_28px_90px_rgb(27_48_82_/_0.13)] sm:min-h-72 md:col-span-5 md:h-[min(72dvh,43rem)] md:min-h-[30rem] lg:min-h-[35rem]"
-        >
-          <motion.div style={{ scale: imageScale }} className="absolute inset-0">
-            <Image
-              src="/images/portrait.webp"
-              alt="Portrait of Oscar Bucio in a suit"
-              fill
-              priority
-              sizes="(max-width: 767px) 100vw, 40vw"
-              className="object-cover object-[50%_10%] grayscale contrast-[1.04]"
+      <div className="relative mx-auto grid min-h-[100dvh] max-w-[1380px] grid-rows-[1fr_auto] px-5 pt-24 sm:px-8 lg:px-10">
+        <div className="grid items-end gap-12 pb-12 lg:grid-cols-12 lg:gap-10 lg:pb-16">
+          <motion.div style={{ y: copyY }} className="relative z-10 lg:col-span-8">
+            <TitleCard
+              intro
+              level={1}
+              size="hero"
+              index="01"
+              label="Backend & AI engineering"
+              meta="Rev. 2026.09"
+              lines={[
+                { text: "Backends" },
+                { text: "for production", scale: 0.42, tone: "muted", light: true },
+                {
+                  text: "AI",
+                  after: (
+                    <span className="ml-[0.08em] inline-block size-[0.17em] translate-y-[-0.04em] bg-accent" />
+                  ),
+                },
+              ]}
             />
+            <p
+              className="fade-rise mt-9 max-w-[52ch] text-base leading-relaxed text-pretty text-muted sm:text-lg"
+              style={{ animationDelay: "0.55s" }}
+            >
+              I design typed services, agent tools and cloud workflows that move
+              AI from demos into regulated products, currently for banking and
+              fintech teams.
+            </p>
+            <div
+              className="fade-rise mt-9 flex flex-col gap-3 min-[420px]:flex-row"
+              style={{ animationDelay: "0.68s" }}
+            >
+              <CtaLink href="#architecture">See the system</CtaLink>
+              <CtaLink href={site.resume} variant="ghost" newTab>
+                Resume
+              </CtaLink>
+            </div>
           </motion.div>
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_64%,rgb(7_10_16_/_0.28))]"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 rounded-[inherit] ring-1 ring-white/15 ring-inset"
-          />
-        </motion.figure>
+
+          <div className="relative lg:col-span-4">
+            <motion.figure
+              style={{ y: imageY }}
+              className="fade-rise relative p-3"
+            >
+              <Brackets className="border-foreground/60" size="size-4" />
+              <div className="relative aspect-[4/5] overflow-hidden bg-surface">
+                <motion.div style={{ scale: imageScale }} className="absolute inset-0">
+                  <Image
+                    src="/images/portrait.webp"
+                    alt="Portrait of Oscar Bucio in a suit"
+                    fill
+                    priority
+                    sizes="(max-width: 1023px) 90vw, 30vw"
+                    className="object-cover object-[50%_12%] grayscale contrast-[1.06]"
+                  />
+                </motion.div>
+                <div aria-hidden className="scanlines pointer-events-none absolute inset-0 mix-blend-overlay" />
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_58%,rgb(6_8_12/0.55))]"
+                />
+                <div aria-hidden className="hud absolute inset-x-3 bottom-3 flex justify-between text-white/85">
+                  <span>Fig. 01</span>
+                  <span>19.43°N 99.13°W</span>
+                </div>
+                <span aria-hidden className="absolute top-3 right-3 size-2 bg-accent" />
+              </div>
+              <figcaption className="hud mt-3 flex justify-between text-muted">
+                <span>{site.name}</span>
+                <span>
+                  CDMX <LiveClock />
+                </span>
+              </figcaption>
+            </motion.figure>
+
+            <dl className="fade-rise mt-6 border-t border-edge" style={{ animationDelay: "0.8s" }}>
+              {readouts.map((item) => (
+                <div
+                  key={item.label}
+                  className="hud grid grid-cols-[6.5rem_minmax(0,1fr)] gap-3 border-b border-edge py-2.5"
+                >
+                  <dt className="text-muted">{item.label}</dt>
+                  <dd className="flex items-center gap-2 text-foreground">
+                    {"live" in item && item.live && (
+                      <span aria-hidden className="blink size-1.5 bg-accent" />
+                    )}
+                    {item.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
+
+        {/* Instrument scale across the fold, in the manner of a gauge. */}
+        <div aria-hidden="true" className="hud relative pb-6 text-muted">
+          <div className="flex items-end gap-4">
+            <span className="w-12 shrink-0 text-foreground">
+              <ScrollPercent />
+            </span>
+            <div className="relative flex-1">
+              <div className="rule-draw h-px bg-edge-strong" />
+              <div className="mt-2 grid grid-cols-3 gap-y-1 sm:grid-cols-6">
+                {scale.map((tick) => (
+                  <span key={tick} className="relative pt-2">
+                    <span className="absolute top-[-0.6rem] left-0 h-2 w-px bg-edge-strong" />
+                    {tick}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

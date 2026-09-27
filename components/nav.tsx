@@ -9,6 +9,8 @@ import {
   X,
 } from "@phosphor-icons/react";
 import { useEffect, useId, useRef, useState } from "react";
+import { LiveClock } from "@/components/hud-live";
+import { LogoMark } from "@/components/logo-mark";
 import { NavLinks } from "@/components/nav-links";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { site } from "@/lib/site";
@@ -68,16 +70,21 @@ export function Nav() {
             onClick={() => closeMobileMenu()}
             className="group inline-flex min-h-11 shrink-0 items-center gap-3 pr-3 focus-visible:outline-offset-4"
           >
-            <span
-              aria-hidden="true"
-              className="flex size-8 items-center justify-center rounded-lg border border-edge font-mono text-[10px] font-semibold tracking-[-0.02em] text-accent transition-[border-color,background-color,transform] duration-300 group-hover:-rotate-3 group-hover:border-accent/50 group-hover:bg-surface group-active:scale-[0.96]"
-            >
-              {site.initials}
-            </span>
-            <span className="text-sm font-semibold tracking-[-0.02em] transition-colors duration-200 group-hover:text-accent">
+            <LogoMark className="h-[1.1rem] w-auto text-foreground transition-transform duration-300 group-hover:-translate-y-px" />
+            <span className="hud text-foreground transition-colors duration-200 group-hover:text-accent-text">
               {site.name}
             </span>
           </a>
+
+          <div
+            aria-hidden="true"
+            className="hud ml-8 hidden gap-8 text-muted xl:flex"
+          >
+            <span>Backend / AI Engineer</span>
+            <span>
+              Mexico City <LiveClock /> CST
+            </span>
+          </div>
 
           <div className="ml-auto hidden min-w-0 items-center md:flex">
             <NavLinks />
@@ -85,9 +92,9 @@ export function Nav() {
               href={site.resume}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center gap-1 px-2.5 text-[13px] font-medium tracking-[-0.01em] text-muted transition-colors duration-200 hover:text-foreground lg:px-3"
+              className="hud inline-flex min-h-11 items-center gap-1 px-2.5 text-muted transition-colors duration-200 hover:text-foreground lg:px-3"
             >
-              Résumé
+              Resume
               <span className="sr-only">, opens in a new tab</span>
               <ArrowUpRight aria-hidden="true" size={13} />
             </a>
@@ -188,14 +195,14 @@ export function Nav() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => closeMobileMenu()}
-                    className="flex min-h-14 w-full items-center justify-between border-b border-edge py-2 text-base font-medium tracking-[-0.02em] text-foreground transition-colors duration-200 hover:text-accent active:text-accent"
+                    className="flex min-h-14 w-full items-center justify-between border-b border-edge py-2 text-base font-medium tracking-[-0.02em] text-foreground transition-colors duration-200 hover:text-accent-text active:text-accent-text"
                   >
-                    Résumé
+                    Resume
                     <span className="sr-only">, opens in a new tab</span>
                     <ArrowUpRight aria-hidden="true" size={16} className="mr-1 text-muted" />
                   </a>
                   <div className="mt-3 flex items-center justify-between border-t border-edge pt-3">
-                    <span className="text-sm text-muted">Profiles</span>
+                    <span className="hud text-muted">Profiles</span>
                     <div className="flex items-center">
                       <a
                         href={site.github}

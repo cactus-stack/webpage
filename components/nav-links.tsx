@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 
 const links = [
+  { href: "#architecture", label: "System" },
   { href: "#work", label: "Work" },
-  { href: "#about", label: "About" },
+  { href: "#about", label: "Record" },
   { href: "#contact", label: "Contact" },
 ] as const;
 
@@ -76,10 +77,10 @@ export function NavLinks({
               }}
               className={
                 isMobile
-                  ? `group flex min-h-14 w-full items-center justify-between border-b border-edge py-2 text-base font-medium tracking-[-0.02em] transition-colors duration-200 hover:text-accent active:text-accent ${
-                      isActive ? "text-accent" : "text-foreground"
+                  ? `group flex min-h-14 w-full items-center justify-between border-b border-edge py-2 text-base font-medium tracking-[-0.02em] transition-colors duration-200 hover:text-accent-text active:text-accent-text ${
+                      isActive ? "text-accent-text" : "text-foreground"
                     }`
-                  : `group relative inline-flex min-h-11 items-center gap-2 px-2.5 text-[13px] font-medium tracking-[-0.01em] transition-colors duration-200 after:absolute after:inset-x-2.5 after:bottom-0 after:h-px after:origin-center after:bg-accent after:transition-transform after:duration-300 lg:px-3 lg:after:inset-x-3 ${
+                  : `hud group relative inline-flex min-h-11 items-center gap-2 px-2.5 transition-colors duration-200 after:absolute after:inset-x-2.5 after:bottom-0 after:h-px after:origin-center after:bg-accent after:transition-transform after:duration-300 lg:px-3 lg:after:inset-x-3 ${
                       isActive
                         ? "text-foreground after:scale-x-100"
                         : "text-muted after:scale-x-0 hover:text-foreground hover:after:scale-x-100"
@@ -90,7 +91,7 @@ export function NavLinks({
               {isMobile && (
                 <span
                   aria-hidden="true"
-                  className={`mr-1 size-1.5 rounded-full bg-accent transition-[transform,opacity] duration-300 ${
+                  className={`mr-1 size-1.5 bg-accent transition-[transform,opacity] duration-300 ${
                     isActive ? "scale-100 opacity-100" : "scale-0 opacity-0"
                   }`}
                 />

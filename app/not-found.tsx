@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { CtaLink } from "@/components/cta";
+import { CautionTape, HudRule } from "@/components/hud";
+import { LogoMark } from "@/components/logo-mark";
 
 export const metadata: Metadata = {
   title: "Page not found",
@@ -17,20 +19,30 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden px-6 text-center">
-      <div aria-hidden className="absolute inset-x-0 bottom-0 h-[18dvh] bg-surface" />
-      <p className="relative font-mono text-[13px] uppercase tracking-[0.2em] text-accent">
-        404
-      </p>
-      <h1 className="relative mt-6 text-4xl tracking-tighter md:text-6xl">
-        This page isn&apos;t here.
-      </h1>
-      <p className="relative mt-6 max-w-[40ch] text-lg leading-relaxed text-muted">
-        The address may be wrong, or the page moved. Everything lives on the
-        home page anyway.
-      </p>
-      <div className="relative mt-10">
-        <CtaLink href="/">Back to home</CtaLink>
+    <main className="relative flex min-h-[100dvh] flex-col overflow-hidden">
+      <CautionTape />
+      <div
+        aria-hidden
+        className="hex-field pointer-events-none absolute inset-x-0 top-2.5 bottom-0 text-hex-line [--hex-fade:radial-gradient(75%_80%_at_70%_50%,black_30%,transparent)]"
+      />
+      <div className="relative mx-auto flex w-full max-w-[1380px] flex-1 flex-col justify-center px-5 py-20 sm:px-8 lg:px-10">
+        <LogoMark title="Oscar Bucio" className="h-6 w-auto self-start text-foreground" />
+        <HudRule
+          className="mt-12 text-muted"
+          left={<span className="text-accent-text">Error 404</span>}
+          right="Signal lost"
+        />
+        <h1 className="title-card mt-8 text-[clamp(3.4rem,11vw,10rem)]">
+          <span className="block">No route</span>
+          <span className="title-light block text-[0.42em] text-muted">to this page</span>
+        </h1>
+        <p className="mt-8 max-w-[44ch] text-lg leading-relaxed text-pretty text-muted">
+          The address may be wrong, or the page moved. Everything lives on the
+          home page.
+        </p>
+        <div className="mt-10">
+          <CtaLink href="/">Back to home</CtaLink>
+        </div>
       </div>
     </main>
   );
